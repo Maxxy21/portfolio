@@ -16,7 +16,7 @@ export const ThemeProvider = ({
                               }: {
     children: ReactNode
 }) => {
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState("dark");
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export const ThemeProvider = ({
         setTheme(storedTheme);
     }, []);
 
-    // if (!mounted) return <>Loading...</>
+    if (!mounted) return <></>
 
     const changeTheme = (theme: string) => {
         setTheme(theme);
@@ -35,6 +35,7 @@ export const ThemeProvider = ({
     const checkDark = () => {
         return theme === "dark";
     }
+
 
     return (
         <ThemeContext.Provider value={{theme, changeTheme, checkDark}}>

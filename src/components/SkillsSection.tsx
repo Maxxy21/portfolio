@@ -8,7 +8,6 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-    {area: 'Front-End Mobile', items: ['Flutter', 'React Native']},
     {
         area: 'Front-End Web',
         items: [
@@ -16,12 +15,11 @@ const skills: Skill[] = [
             'Javascript',
             'React.js',
             'NextJS',
-            'Astro',
             'Tailwind',
             'Bootstrap',
         ],
     },
-    {area: 'CMS', items: ['Wordpress', 'Sanity.io']},
+    {area: 'Front-End Mobile', items: ['Flutter', 'React Native']},
     {
         area: 'Back-End',
         items: ['NestJS', 'Firebase', 'Express.Js', 'TypeScript'],
@@ -67,14 +65,6 @@ const SkillsSection = () => {
                 <button className="btn bg-blue-500 p-3 w-[85%] md:w-48 self-center mt-6 transition hover:bg-blue-400 ease-in duration-300">
                     View Resume
                 </button>
-                {/*<a*/}
-                {/*    className="bg-violet-500 rounded-lg text-white font-bold text-center p-3 w-[85%] md:w-48 self-center mt-6 transition hover:bg-violet-400 ease-in duration-300"*/}
-                {/*    href=""*/}
-                {/*    target="_blank"*/}
-                {/*    rel="noopener noreferrer"*/}
-                {/*>*/}
-                {/*    View Resume*/}
-                {/*</a>*/}
             </div>
         </section>
     );
