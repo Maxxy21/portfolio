@@ -64,14 +64,17 @@ const SkillsSection = () => {
                     ))}
                 </div>
 
-                <a
-                    className="bg-violet-500 rounded-lg text-white font-bold text-center p-3 w-[85%] md:w-48 self-center mt-6 transition hover:bg-violet-400 ease-in duration-300"
-                    href=""
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <button className="btn bg-blue-500 p-3 w-[85%] md:w-48 self-center mt-6 transition hover:bg-blue-400 ease-in duration-300">
                     View Resume
-                </a>
+                </button>
+                {/*<a*/}
+                {/*    className="bg-violet-500 rounded-lg text-white font-bold text-center p-3 w-[85%] md:w-48 self-center mt-6 transition hover:bg-violet-400 ease-in duration-300"*/}
+                {/*    href=""*/}
+                {/*    target="_blank"*/}
+                {/*    rel="noopener noreferrer"*/}
+                {/*>*/}
+                {/*    View Resume*/}
+                {/*</a>*/}
             </div>
         </section>
     );
