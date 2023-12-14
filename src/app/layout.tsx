@@ -1,12 +1,11 @@
 import type {Metadata} from 'next'
-import {Inter} from 'next/font/google'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import './globals.css'
 import '@fontsource/sen';
+
 import {ThemeProvider} from "@/context/ThemeContext";
 import ClientThemeWrapper from "@/context/ClientThemeWrapper";
 
-
-const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
     title: 'Maxwell Aboagye',
