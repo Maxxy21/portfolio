@@ -93,7 +93,7 @@ const ProjectSection = () => {
                         </p>
 
                         <span className='w-full'>
-                        <div className='w-12 h-12 md:w-8 md:h-8 mt-4 float-right rounded-full border'>
+                        <div className='w-12 h-12 md:w-8 md:h-8 mt-4 float-right'>
                            <SlArrowRightCircle
                                size={32}
                            />
