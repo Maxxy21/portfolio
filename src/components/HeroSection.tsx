@@ -22,8 +22,11 @@ const HeroSection = () => {
                 </div>
                 <div className="flex flex-col items-center lg:items-start lg:w-3/5">
                     <div className="flex flex-col items-center lg:flex-row lg:items-center gap-3">
-                        <h1 className="text-4xl font-bold">Maxwell Aboagye</h1>
-                        <Image src={rectangle} alt="underline" />
+                        <h1 className="text-4xl font-bold ">Maxwell Aboagye</h1>
+                        <Image
+                            src={rectangle}
+                            className="rounded-full shadow-2xl"
+                            alt="underline" />
                     </div>
                     <p className="text-xl mt-4 mb-6 ">
                         I&#39;m a <span className="font-semibold text-yellow-400">Software Developer</span> based in Hamburg, Germany.
