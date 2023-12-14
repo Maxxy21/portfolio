@@ -53,7 +53,8 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center justify-center md:hidden">
+
+            <div className="flex items-center justify-center invisible lg:visible">
                 <Link href={"#about"}>
                     <HiArrowDown size={30} className="animate-bounce"/>
                 </Link>
