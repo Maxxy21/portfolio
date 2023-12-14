@@ -11,19 +11,15 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
     {
         label: "About",
-        page: "/about",
+        page: "#about",
     },
     {
         label: "Projects",
-        page: "/projects",
+        page: "#projects",
     },
     {
         label: "Skills",
-        page: "/skills",
-    },
-    {
-        label: "Contact",
-        page: "/contact",
+        page: "#skills",
     },
 ];
 

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer {
+    .project-card {
+        @apply flex flex-col col-span-3  gap-3 rounded-md p-6 md:h-[150px] text-white;
+    }
+}
+
 
 :root {
     --foreground-rgb: 0, 0, 0;
@@ -23,6 +29,5 @@ body {
             to bottom,
             transparent,
             rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    ) rgb(var(--background-start-rgb));
 }

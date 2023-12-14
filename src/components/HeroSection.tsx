@@ -11,7 +11,7 @@ const HeroSection = () => {
     return (
         <section id="home" className="text-center py-16 sm:py-32 lg:py-48">
             <div className="flex flex-col items-center justify-center animate-fadeIn animation-delay-2 my-10 lg:flex-row lg:justify-center lg:space-x-10">
-                <div className="lg:mt-0 lg:w-2/5 flex justify-center lg:justify-end">
+                <div className="mb-8 lg:mb-0 lg:mr-8 lg:w-2/5 flex justify-center lg:justify-end">
                     <Image
                         src={portrait}
                         alt="Maxwell Aboagye"
@@ -22,10 +22,10 @@ const HeroSection = () => {
                 </div>
                 <div className="flex flex-col items-center lg:items-start lg:w-3/5">
                     <div className="flex flex-col items-center lg:flex-row lg:items-center gap-3">
-                        <h1 className="text-5xl font-bold">Maxwell Aboagye</h1>
+                        <h1 className="text-4xl font-bold">Maxwell Aboagye</h1>
                         <Image src={rectangle} alt="underline" />
                     </div>
-                    <p className="text-lg mt-4 mb-6 lg:text-2xl">
+                    <p className="text-xl mt-4 mb-6 ">
                         I&#39;m a <span className="font-semibold text-yellow-400">Software Developer</span> based in Hamburg, Germany.
                     </p>
                     <div className='flex justify-center lg:justify-start gap-4 w-full lg:w-auto'>
@@ -50,7 +50,7 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center ">
                 <Link href={"#about"}>
                     <HiArrowDown size={30} className="animate-bounce"/>
                 </Link>
