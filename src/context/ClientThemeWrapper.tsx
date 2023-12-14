@@ -8,6 +8,11 @@ export default function ClientThemeWrapper({
                                            }: {
     children: ReactNode
 }) {
-    const {theme} = useContext(ThemeContext);
+    const themeContext = useContext(ThemeContext);
+    if (!themeContext) {
+        throw new Error('ThemeContext is not defined');
+    }
+
+    const {theme} = themeContext;
     return <div data-theme={theme}>{children}</div>
 }
