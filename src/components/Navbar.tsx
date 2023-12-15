@@ -38,7 +38,7 @@ const NavBar = () => {
 
     const { changeTheme, checkDark } = themeContext;
 
-    
+
     return (
         <header id='navbar'
                 className='md:px-12 flex flex-col md:flex-row justify-between h-[80px] md:h-[50px] items-center sticky top-0 left-0 right-0 bg-opacity-60 py-3'>

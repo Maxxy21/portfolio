@@ -25,7 +25,7 @@ export default function RootLayout({
                 {children}
             </ClientThemeWrapper>
         </ThemeProvider>
-        <SpeedInsights/>
+
         </body>
 
         </html>
