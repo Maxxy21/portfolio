@@ -1,17 +1,18 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import About from "@/components/about";
-import ProjectSection from "@/components/ProjectSection";
-import SkillsSection from "@/components/SkillsSection";
+import {HeroSection} from "@/components/hero-section";
+import {AboutSection} from "@/components/about-section";
+import {SkillsSection} from "@/components/skills-section";
+import {ProjectSection} from "@/components/project-session";
+import {ContactSection} from "@/components/contact-section";
+
 
 export default function Home() {
     return (
         <div className="p-6">
-            <Navbar/>
-            <HeroSection/>
-            <About/>
-            <ProjectSection/>
-            <SkillsSection/>
+            <HeroSection />
+            <AboutSection />
+            <SkillsSection />
+            <ProjectSection />
+            <ContactSection />
         </div>
     )
 }
