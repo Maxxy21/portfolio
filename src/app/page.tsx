@@ -1,17 +1,16 @@
-import Navbar from "@/components/Navbar";
-import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
+import Navbar from "@/components/header";
+import Intro from "@/components/intro";
+import About from "@/components/about";
 import ProjectSection from "@/components/ProjectSection";
 import SkillsSection from "@/components/SkillsSection";
 
 export default function Home() {
     return (
-        <div className="p-6">
-            <Navbar/>
-            <HeroSection/>
-            <AboutSection/>
-            <ProjectSection/>
-            <SkillsSection/>
-        </div>
+        <main className="flex flex-col items-center px-4">
+            <Intro/>
+            {/*<About/>*/}
+            {/*<ProjectSection/>*/}
+            {/*<SkillsSection/>*/}
+        </main>
     )
 }

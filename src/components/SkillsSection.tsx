@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import wavy_underline from '@/assets/wavy_underline.svg';
+import wavy_underline from '../assets/wavy_underline.svg';
 
 
 interface Skill {
