@@ -12,7 +12,7 @@ export const AboutSection: FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-3xl md:text-4xl font-bold mb-8 text-center gradient-text"
                 >
-                    About Me
+                    About e
                 </motion.h2>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
