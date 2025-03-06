@@ -1,10 +1,10 @@
 "use client"
 
-import { useState, useEffect } from 'react'
+import {useState, useEffect} from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import {motion} from 'framer-motion'
+import {Menu, X} from 'lucide-react'
+import {Button} from '@/components/ui/button'
 
 interface NavItem {
     label: string
@@ -15,6 +15,10 @@ const NAV_ITEMS: Array<NavItem> = [
     {
         label: "About",
         page: "#about",
+    },
+    {
+        label: "Experience",
+        page: "#experience",
     },
     {
         label: "Projects",
@@ -114,9 +118,9 @@ const Navbar = () => {
                             aria-label="Toggle menu"
                         >
                             {isMenuOpen ? (
-                                <X className="h-6 w-6" />
+                                <X className="h-6 w-6"/>
                             ) : (
-                                <Menu className="h-6 w-6" />
+                                <Menu className="h-6 w-6"/>
                             )}
                         </Button>
                     </div>
@@ -126,12 +130,12 @@ const Navbar = () => {
             {/* Mobile Menu */}
             <motion.div
                 className="md:hidden"
-                initial={{ opacity: 0, height: 0 }}
+                initial={{opacity: 0, height: 0}}
                 animate={{
                     opacity: isMenuOpen ? 1 : 0,
                     height: isMenuOpen ? "auto" : 0
                 }}
-                transition={{ duration: 0.3 }}
+                transition={{duration: 0.3}}
             >
                 {isMenuOpen && (
                     <div className="container mx-auto px-4 py-4 bg-background/95 backdrop-blur-lg">

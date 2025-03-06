@@ -38,7 +38,7 @@ const HeroSection = () => {
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     <Link href={"#projects"}>
-                        <Button variant="default" className="glow">
+                        <Button variant="default">
                             View Projects
                         </Button>
                     </Link>

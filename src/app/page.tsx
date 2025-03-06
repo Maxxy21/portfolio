@@ -6,22 +6,22 @@ import AboutSection from "@/components/sections/about";
 import ProjectsSection from "@/components/sections/project";
 import {SkillsSection} from "@/components/sections/skills";
 import ContactSection from "@/components/sections/contacts";
+import ExperienceSection from "@/components/sections/experience";
 
 
 
 export default function Home() {
     return (
-
-            <main className="min-h-screen">
-                <ParticlesBackground />
-                <Navbar />
-                <HeroSection />
-                <AboutSection />
-                <ProjectsSection />
-                <SkillsSection />
-                <ContactSection />
-                <Footer />
-            </main>
-
+        <main className="min-h-screen">
+            <ParticlesBackground />
+            <Navbar />
+            <HeroSection />
+            <AboutSection />
+            <ExperienceSection />
+            <ProjectsSection />
+            <SkillsSection />
+            <ContactSection />
+            <Footer />
+        </main>
     )
 }
