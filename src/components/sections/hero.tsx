@@ -25,7 +25,7 @@ const HeroSection = () => {
                 transition={{duration: 0.8}}
                 className="z-10 max-w-4xl text-center"
             >
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 gradient-text ">
                     Maxwell Aboagye
                 </h1>
                 <p className="text-xl md:text-2xl mb-6 text-muted-foreground">
