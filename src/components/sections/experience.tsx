@@ -6,34 +6,25 @@ import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
 import Link from "next/link";
 
-// Sample experience data (replace with your actual experience)
+
 const experiences = [
     {
-        title: "Senior Frontend Developer",
-        company: "TechCorp Solutions",
+        title: "Operations Risk Management Associate",
+        company: "Amazon",
         location: "Hamburg, Germany",
-        period: "Jan 2022 - Present",
-        description: "Leading frontend development for enterprise applications using React, TypeScript, and Next.js. Implemented CI/CD pipelines and reduced load times by 40% through code optimization.",
-        skills: ["React", "TypeScript", "Next.js", "Redux", "Tailwind CSS"],
-        companyUrl: "https://example.com"
+        period: "Dec 2024 - Present",
+        description: "Monitor and analyze delivery service partner (DSP) performance metrics using Mercury platform. Conduct regular risk assessments and trend analysis for delivery operations. Collaborate with Delivery Service Partners to track and improve driver safety metrics. Maintain compliance documentation and generate performance reports.",
+        skills: ["Risk Assessment", "Performance Metrics", "Trend Analysis", "Data Analysis", "Compliance"],
+        companyUrl: "https://amazon.com"
     },
     {
-        title: "Frontend Developer",
-        company: "Digital Innovations GmbH",
-        location: "Berlin, Germany",
-        period: "Mar 2020 - Dec 2021",
-        description: "Developed responsive web applications and collaborated with design teams to implement pixel-perfect UIs. Led the migration from legacy codebase to modern React architecture.",
-        skills: ["JavaScript", "React", "CSS3", "Webpack", "Jest"],
-        companyUrl: "https://example.com"
-    },
-    {
-        title: "Web Developer",
-        company: "CreativeStudio",
-        location: "Munich, Germany",
-        period: "Jun 2018 - Feb 2020",
-        description: "Built interactive websites for clients across various industries. Collaborated in agile teams to deliver projects on tight deadlines. Implemented analytics tracking that improved conversion rates by 25%.",
-        skills: ["HTML5", "CSS3", "JavaScript", "jQuery", "PHP"],
-        companyUrl: "https://example.com"
+        title: "Software Developer Intern",
+        company: "ewo GmbH",
+        location: "Bolzano, Italy",
+        period: "Sep 2022 - Jun 2023",
+        description: "Developed and maintained a web application using React.js and Spring Boot, reducing process times by 80%. Implemented RESTful APIs for system integration and designed microservices architecture. Built automated testing suites and maintained CI/CD pipelines using Git and Docker.",
+        skills: ["React.js", "Spring Boot", "RESTful APIs", "Git", "Docker", "CI/CD"],
+        companyUrl: "https://www.ewo.com"
     }
 ]
 

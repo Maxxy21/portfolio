@@ -2,7 +2,10 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react'
+import { Mail } from 'lucide-react'
+import Image from "next/image";
+import gitHub from "@/assets/github-mark-white.svg";
+import linkedin from "@/assets/linkedin.png";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear()
@@ -23,40 +26,18 @@ const Footer = () => {
 
                     <div className="flex flex-col items-center md:items-end">
                         <div className="flex space-x-4 mb-4">
-                            <a
-                                href="https://github.com/yourusername"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-foreground hover:text-primary transition-colors"
-                                aria-label="GitHub"
-                            >
-                                <Github className="h-5 w-5" />
-                            </a>
-                            <a
-                                href="https://linkedin.com/in/yourusername"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-foreground hover:text-primary transition-colors"
-                                aria-label="LinkedIn"
-                            >
-                                <Linkedin className="h-5 w-5" />
-                            </a>
-                            <a
-                                href="https://twitter.com/yourusername"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-foreground hover:text-primary transition-colors"
-                                aria-label="Twitter"
-                            >
-                                <Twitter className="h-5 w-5" />
-                            </a>
-                            <a
-                                href="mailto:contact@maxwellaboagye.com"
-                                className="text-foreground hover:text-primary transition-colors"
-                                aria-label="Email"
-                            >
-                                <Mail className="h-5 w-5" />
-                            </a>
+                            <Link href={"https://github.com/Maxxy21"} target="_blank" rel="noopener noreferrer"
+                                  className="text-foreground hover:text-primary transition-colors">
+                                <Image src={gitHub} alt="GitHub" width={24} height={24}/>
+                            </Link>
+                            <Link href={"https://www.linkedin.com/in/maxwell-aboagye/"} target="_blank" rel="noopener noreferrer"
+                                  className="text-foreground hover:text-primary transition-colors">
+                                <Image src={linkedin} alt="LinkedIn" width={24} height={24}/>
+                            </Link>
+                            <Link href="mailto:aboagyemaxwell@outlook.com"
+                                  className="text-foreground hover:text-primary transition-colors">
+                                <Mail className="w-6 h-6"/>
+                            </Link>
                         </div>
                         <p className="text-sm text-muted-foreground">
                             © {currentYear} Maxwell Aboagye. All rights reserved.

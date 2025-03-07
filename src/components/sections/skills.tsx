@@ -2,39 +2,34 @@
 
 
 import { motion } from "framer-motion"
-import { Code, Database, LineChart, Monitor, Router, Server } from "lucide-react"
+import {BarChart, Code, Database, LineChart, Monitor, Router, Server} from "lucide-react"
 
 const skills = [
     {
-        category: "Frontend",
+        category: "Frontend Development",
         icon: <Monitor className="w-10 h-10 text-primary" />,
-        items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+        items: ["JavaScript", "TypeScript", "React.js", "HTML5", "CSS3", "TailwindCSS"]
     },
     {
-        category: "Backend",
+        category: "Backend Development",
         icon: <Server className="w-10 h-10 text-primary" />,
-        items: ["Node.js", "Express", "Python", "Django", "GraphQL"]
+        items: ["Java", "Spring Boot", "Node.js", "RESTful APIs"]
     },
     {
-        category: "Database",
+        category: "Database & Tools",
         icon: <Database className="w-10 h-10 text-primary" />,
-        items: ["MongoDB", "PostgreSQL", "Redis", "Firebase", "Prisma"]
+        items: ["MySQL", "PostgreSQL", "Git", "Docker", "CI/CD"]
     },
     {
-        category: "DevOps",
-        icon: <Router className="w-10 h-10 text-primary" />,
-        items: ["Docker", "Kubernetes", "AWS", "CI/CD", "GitHub Actions"]
+        category: "Data Analysis",
+        icon: <BarChart className="w-10 h-10 text-primary" />,
+        items: ["Risk Assessment", "Performance Metrics", "Trend Analysis", "Data-driven Decision Making"]
     },
     {
-        category: "Programming",
+        category: "Core Competencies",
         icon: <Code className="w-10 h-10 text-primary" />,
-        items: ["JavaScript", "TypeScript", "Python", "Java", "C#"]
-    },
-    {
-        category: "Data & Analytics",
-        icon: <LineChart className="w-10 h-10 text-primary" />,
-        items: ["D3.js", "TensorFlow", "pandas", "NumPy", "Power BI"]
-    },
+        items: ["Problem Solving", "Agile Methodologies", "Collaborative Development", "Stakeholder Communication"]
+    }
 ]
 
 export const SkillsSection = () => {

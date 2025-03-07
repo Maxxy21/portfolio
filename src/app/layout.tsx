@@ -7,7 +7,7 @@ import '@fontsource/sen'
 export const metadata: Metadata = {
     title: 'Maxwell Aboagye | Software Developer',
     description: 'Software Developer based in Hamburg, Germany specializing in building high-performance web applications.',
-    keywords: 'developer, software engineer, web developer, React, Next.js, JavaScript, TypeScript',
+    keywords: 'developer, software engineer, web developer, React, Next.js, JavaScript, TypeScript, Tailwind CSS, Java, Python',
     icons: "/portrait.jpg",
 }
 

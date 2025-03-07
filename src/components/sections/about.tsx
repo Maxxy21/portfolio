@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Download, Globe } from "lucide-react"
+import { Download, Globe, GraduationCap, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import portrait from "../../assets/portrait.jpg"
@@ -48,14 +48,19 @@ const AboutSection = () => {
                         >
                             <div className="bg-secondary/50 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
                                 <p className="text-lg mb-4 text-secondary-foreground">
-                                    I&lsquo;m a passionate developer with a knack for turning complex problems into
-                                    elegant, efficient solutions. My journey in tech is driven by curiosity and a
-                                    desire to push boundaries.
+                                    I&apos;m a Full Stack Developer with hands-on experience in web application development,
+                                    microservices, and risk management operations. I combine strong technical skills with
+                                    analytical thinking to deliver efficient and elegant solutions.
+                                </p>
+                                <p className="text-lg mb-4 text-secondary-foreground">
+                                    Currently working as an Operations Risk Management Associate at Amazon while
+                                    completing my Bachelor&apos;s in Computer Science at Free University of Bolzano. My
+                                    professional journey includes experience in React.js, Spring Boot, and microservices
+                                    architecture.
                                 </p>
                                 <p className="text-lg mb-6 text-secondary-foreground">
-                                    When I&lsquo;m not immersed in code, you&lsquo;ll find me exploring emerging
-                                    technologies, contributing to open-source projects, or sharing knowledge
-                                    through tech community events.
+                                    I&apos;m passionate about problem-solving, data-driven decision making, and building software
+                                    that makes a meaningful impact.
                                 </p>
 
                                 <div className="mb-6">
@@ -67,12 +72,12 @@ const AboutSection = () => {
                                         {languages.map((lang) => (
                                             <div key={lang.language}>
                                                 <div className="flex justify-between items-center mb-1">
-                          <span className="text-secondary-foreground">
-                            {lang.language}
-                              <span className="ml-2 text-sm text-muted-foreground">
-                              {lang.level}
-                            </span>
-                          </span>
+                                                    <span className="text-secondary-foreground">
+                                                        {lang.language}
+                                                        <span className="ml-2 text-sm text-muted-foreground">
+                                                            {lang.level}
+                                                        </span>
+                                                    </span>
                                                 </div>
                                                 <div className="h-2 w-full bg-background/50 rounded-full overflow-hidden">
                                                     <motion.div
