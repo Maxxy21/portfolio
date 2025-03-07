@@ -4,7 +4,8 @@ import { motion } from "framer-motion"
 import { Download, Globe, GraduationCap, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-
+import portrait from "../../assets/portrait.jpg"
+import Link from "next/link";
 
 // Language proficiency data
 const languages = [
@@ -37,7 +38,7 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                             className="aspect-square relative rounded-full overflow-hidden border-4 border-primary/20 shadow-lg max-w-xs mx-auto md:mx-0"
                         >
-                            <Image src={"/portrait.jpg"} alt="Portrait" layout="fill" objectFit="cover" />
+                            <Image src={portrait} alt="Portrait" layout="fill" objectFit="cover" />
                         </motion.div>
 
                         <motion.div
@@ -45,7 +46,6 @@ const AboutSection = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                             viewport={{ once: true }}
-
                         >
                             <div className="bg-secondary/50 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
                                 <p className="text-lg mb-4 text-secondary-foreground">
@@ -59,10 +59,10 @@ const AboutSection = () => {
                                     professional journey includes experience in React.js, Spring Boot, and microservices
                                     architecture.
                                 </p>
-                                {/*<p className="text-lg mb-6 text-secondary-foreground">*/}
-                                {/*    I&apos;m passionate about problem-solving, data-driven decision making, and building software*/}
-                                {/*    that makes a meaningful impact.*/}
-                                {/*</p>*/}
+                                <p className="text-lg mb-6 text-secondary-foreground">
+                                    I&apos;m passionate about problem-solving, data-driven decision making, and building software
+                                    that makes a meaningful impact.
+                                </p>
 
                                 <div className="mb-6">
                                     <h3 className="flex items-center text-lg font-semibold mb-3 text-primary">
@@ -94,6 +94,14 @@ const AboutSection = () => {
                                     </div>
                                 </div>
 
+                                <div className="flex justify-start">
+                                    <Link href="/resume.pdf" download>
+                                        <Button variant="default">
+                                            <Download className="w-4 h-4 mr-2" />
+                                            Download Resume
+                                        </Button>
+                                    </Link>
+                                </div>
                             </div>
                         </motion.div>
                     </div>
