@@ -10,7 +10,7 @@ import Link from "next/link";
 // Language proficiency data
 const languages = [
     { language: "Asante Twi", level: "Native", proficiency: 100 },
-    { language: "English", level: "C1", proficiency: 90 },
+    { language: "English", level: "C1", proficiency: 98 },
     { language: "Italian", level: "C1", proficiency: 90 },
     { language: "German", level: "B2", proficiency: 75 }
 ]
@@ -48,21 +48,20 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                         >
                             <div className="bg-secondary/50 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
-                                <p className="text-lg mb-4 text-secondary-foreground">
-                                    I&apos;m a Full Stack Developer with hands-on experience in web application development,
-                                    microservices, and risk management operations. I combine strong technical skills with
-                                    analytical thinking to deliver efficient and elegant solutions.
-                                </p>
-                                <p className="text-lg mb-4 text-secondary-foreground">
-                                    Currently working as an Operations Risk Management Associate at Amazon while
-                                    completing my Bachelor&apos;s in Computer Science at Free University of Bolzano. My
-                                    professional journey includes experience in React.js, Spring Boot, and microservices
-                                    architecture.
-                                </p>
-                                <p className="text-lg mb-6 text-secondary-foreground">
-                                    I&apos;m passionate about problem-solving, data-driven decision making, and building software
-                                    that makes a meaningful impact.
-                                </p>
+                            <p className="text-lg mb-4 text-secondary-foreground">
+  I&apos;m a Full Stack Developer with a strong foundation in Java, Spring Boot, React, and modern DevOps tools.
+  I bring a unique blend of backend and frontend expertise, with hands-on experience in web application development,
+  microservices, and risk-focused data analysis.
+</p>
+<p className="text-lg mb-4 text-secondary-foreground">
+  Currently, I work at Amazon as an Operations Risk Management Associate. I'm deeply involved in data-driven risk analysis, system
+  automation, and service performance optimization.
+</p>
+<p className="text-lg mb-6 text-secondary-foreground">
+  I'm passionate about solving complex problems, improving system resilience, and building scalable, secure, and efficient
+  software.
+</p>
+
 
                                 <div className="mb-6">
                                     <h3 className="flex items-center text-lg font-semibold mb-3 text-primary">

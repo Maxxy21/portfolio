@@ -14,14 +14,22 @@ const experiences = [
         location: "Hamburg, Germany",
         period: "Dec 2024 - Present",
         description: [
- "Monitor and analyze delivery service partner (DSP) performance metrics using Mercury platform.",
- "Conduct regular risk assessments and trend analysis for delivery operations.",
- "Collaborate with Delivery Service Partners to track and improve driver safety metrics.",
- "Maintain compliance documentation and generate performance reports.",
- ],
-        skills: ["Risk Assessment", "Performance Metrics", "Trend Analysis", "Data Analysis", "Compliance"],
+            "Analyze operational data to identify trends and risks using the Mercury platform.",
+            "Collaborate with cross-functional teams to improve driver safety and delivery performance.",
+            "Generate automated reports and dashboards to support compliance and risk mitigation.",
+            "Apply analytical methods to optimize delivery logistics and system resilience.",
+            "Support implementation of tools and protocols that enhance safety and service quality."
+        ],
+        skills: [
+            "Data Analysis", 
+            "Risk Assessment", 
+            "Performance Optimization", 
+            "Compliance", 
+            "Cross-functional Collaboration"
+        ],
         companyUrl: "https://amazon.com"
     },
+    
 ]
 
 const ExperienceSection = () => {

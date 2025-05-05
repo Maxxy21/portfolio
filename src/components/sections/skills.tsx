@@ -8,29 +8,30 @@ const skills = [
     {
         category: "Frontend Development",
         icon: <Monitor className="w-10 h-10 text-primary" />,
-        items: ["JavaScript", "TypeScript", "React.js", "HTML5", "CSS3", "TailwindCSS"]
+        items: ["JavaScript", "TypeScript", "React.js", "Next.js", "HTML5", "CSS3", "TailwindCSS"]
     },
     {
         category: "Backend Development",
         icon: <Server className="w-10 h-10 text-primary" />,
-        items: ["Java", "Spring Boot", "Node.js", "RESTful APIs"]
+        items: ["Java", "Spring Boot", "Node.js", "RESTful APIs", "Microservices Architecture"]
     },
     {
-        category: "Database & Tools",
+        category: "DevOps & Tools",
         icon: <Database className="w-10 h-10 text-primary" />,
-        items: ["MySQL", "PostgreSQL", "Git", "Docker", "CI/CD"]
+        items: ["Docker", "CI/CD", "Git", "Jenkins", "Linux", "PostgreSQL", "MySQL"]
     },
     {
-        category: "Data Analysis",
+        category: "Data & Analysis",
         icon: <BarChart className="w-10 h-10 text-primary" />,
-        items: ["Risk Assessment", "Performance Metrics", "Trend Analysis", "Data-driven Decision Making"]
+        items: ["Data Analysis", "Risk Assessment", "Performance Monitoring", "Trend Analysis"]
     },
     {
         category: "Core Competencies",
         icon: <Code className="w-10 h-10 text-primary" />,
-        items: ["Problem Solving", "Agile Methodologies", "Collaborative Development", "Stakeholder Communication"]
+        items: ["Problem Solving", "Agile Development", "Team Collaboration", "Stakeholder Communication"]
     }
 ]
+
 
 export const SkillsSection = () => {
     const containerVariants = {
