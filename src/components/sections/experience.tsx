@@ -13,19 +13,15 @@ const experiences = [
         company: "Amazon",
         location: "Hamburg, Germany",
         period: "Dec 2024 - Present",
-        description: "Monitor and analyze delivery service partner (DSP) performance metrics using Mercury platform. Conduct regular risk assessments and trend analysis for delivery operations. Collaborate with Delivery Service Partners to track and improve driver safety metrics. Maintain compliance documentation and generate performance reports.",
+        description: [
+ "Monitor and analyze delivery service partner (DSP) performance metrics using Mercury platform.",
+ "Conduct regular risk assessments and trend analysis for delivery operations.",
+ "Collaborate with Delivery Service Partners to track and improve driver safety metrics.",
+ "Maintain compliance documentation and generate performance reports.",
+ ],
         skills: ["Risk Assessment", "Performance Metrics", "Trend Analysis", "Data Analysis", "Compliance"],
         companyUrl: "https://amazon.com"
     },
-    {
-        title: "Software Developer Intern",
-        company: "ewo GmbH",
-        location: "Bolzano, Italy",
-        period: "Sep 2022 - Jun 2023",
-        description: "Developed and maintained a web application using React.js and Spring Boot, reducing process times by 80%. Implemented RESTful APIs for system integration and designed microservices architecture. Built automated testing suites and maintained CI/CD pipelines using Git and Docker.",
-        skills: ["React.js", "Spring Boot", "RESTful APIs", "Git", "Docker", "CI/CD"],
-        companyUrl: "https://www.ewo.com"
-    }
 ]
 
 const ExperienceSection = () => {
@@ -82,9 +78,11 @@ const ExperienceSection = () => {
                                         <span className="text-muted-foreground text-sm">{job.location}</span>
                                     </div>
 
-                                    <p className="text-secondary-foreground mb-4">
-                                        {job.description}
-                                    </p>
+                                    <ul className="text-secondary-foreground mb-4 list-disc list-inside">
+                                        {job.description.map((point, pointIndex) => (
+                                            <li key={pointIndex}>{point}</li>
+                                        ))}
+                                    </ul>
 
                                     <div className="flex flex-wrap gap-2">
                                         {job.skills.map((skill) => (
