@@ -54,11 +54,11 @@ const AboutSection = () => {
   microservices, and risk-focused data analysis.
 </p>
 <p className="text-lg mb-4 text-secondary-foreground">
-  Currently, I work at Amazon as an Operations Risk Management Associate. I'm deeply involved in data-driven risk analysis, system
+  Currently, I work at Amazon as an Operations Risk Management Associate. I&apos;m deeply involved in data-driven risk analysis, system
   automation, and service performance optimization.
 </p>
 <p className="text-lg mb-6 text-secondary-foreground">
-  I'm passionate about solving complex problems, improving system resilience, and building scalable, secure, and efficient
+  I&apos;m passionate about solving complex problems, improving system resilience, and building scalable, secure, and efficient
   software.
 </p>
 
