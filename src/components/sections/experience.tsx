@@ -9,12 +9,12 @@ import Link from "next/link";
 
 const experiences = [
     {
-        title: "Operations Risk Management Associate",
+        title: "Business Intelligence Analyst",
         company: "Amazon",
         location: "Hamburg, Germany",
         period: "Dec 2024 - Present",
         description: [
-            "Analyze operational data to identify trends and risks using the Mercury platform.",
+            "Analyze operational data to identify trends and risks using the Mercury platform and Excel.",
             "Collaborate with cross-functional teams to improve driver safety and delivery performance.",
             "Generate automated reports and dashboards to support compliance and risk mitigation.",
             "Apply analytical methods to optimize delivery logistics and system resilience.",

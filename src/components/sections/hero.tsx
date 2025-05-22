@@ -28,7 +28,7 @@ const HeroSection = () => {
                     Maxwell Aboagye
                 </h1>
                 <p className="text-xl md:text-2xl mb-6 text-muted-foreground">
-                    Full Stack Developer | Data Analyst
+                    Full Stack Developer | Business Intelligence Analyst
                 </p>
                 <p className="text-lg max-w-2xl mx-auto mb-8 text-secondary-foreground">
                     Building high-performance web applications and implementing data-driven solutions
