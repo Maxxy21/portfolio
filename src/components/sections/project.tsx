@@ -16,7 +16,7 @@ const projects = [
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Convex", "OpenAI", "Clerk"],
         liveUrl: "https://pista-app.vercel.app/",
         githubUrl: "https://github.com/maxxy21/pista",
-        image: "/projects/pista.png",
+        image: "/projects/pista1.png",
     },
 ]
 
