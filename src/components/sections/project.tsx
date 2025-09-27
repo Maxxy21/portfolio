@@ -11,29 +11,13 @@ import Image from "next/image";
 
 const projects = [
     {
-        title: "Pitch Perfect",
-        description: "A pitch evaluation website with AI for startups.",
-        technologies: ["NextJS", "Convex", "Clerk", "OpenAI"],
-        liveUrl: "https://startup-pitches.vercel.app/",
-        githubUrl: "https://github.com/Maxxy21/startup-pitches",
-        image: "/projects/pitch-perfect.png",
+        title: "Pista",
+        description: "A GenAI-powered platform for evaluating startup pitches and providing comprehensive feedback. Upload pitch presentations as text, audio, or files, receive detailed analysis across multiple dimensions, and get actionable insights to improve your pitch deck and increase funding chances.",
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Convex", "OpenAI", "Clerk"],
+        liveUrl: "https://pista-app.vercel.app/",
+        githubUrl: "https://github.com/maxxy21/pista",
+        image: "/projects/pista.png",
     },
-    // {
-    //     title: "EcoTrack",
-    //     description: "An IoT-based solution for monitoring and reducing carbon footprint with predictive analytics and gamification.",
-    //     technologies: ["Vue.js", "Express", "PostgreSQL", "MQTT"],
-    //     liveUrl: "https://ecotrack.io",
-    //     githubUrl: "https://github.com/yourusername/ecotrack",
-    //     image: "/projects/ecotrack.jpg",
-    // },
-    // {
-    //     title: "CodeCanvas",
-    //     description: "An interactive platform for collaborative coding and real-time code visualization with AI-assisted suggestions.",
-    //     technologies: ["Next.js", "WebSockets", "Three.js", "Firebase"],
-    //     liveUrl: "https://codecanvas.dev",
-    //     githubUrl: "https://github.com/yourusername/codecanvas",
-    //     image: "/projects/codecanvas.jpg",
-    // },
 ]
 
 const ProjectsSection = () => {
