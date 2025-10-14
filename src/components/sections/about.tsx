@@ -9,10 +9,9 @@ import Link from "next/link";
 
 // Language proficiency data
 const languages = [
-    { language: "Asante Twi", level: "Native", proficiency: 100 },
-    { language: "English", level: "C1", proficiency: 98 },
-    { language: "Italian", level: "C1", proficiency: 90 },
-    { language: "German", level: "B2", proficiency: 75 }
+    { language: "English", level: "Native", proficiency: 100 },
+    { language: "German", level: "B2", proficiency: 75 },
+    { language: "Italian", level: "C1", proficiency: 90 }
 ]
 
 const AboutSection = () => {
@@ -29,16 +28,18 @@ const AboutSection = () => {
                     About Me
                 </motion.h2>
 
-                <div className="max-w-4xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 items-start">
                         <motion.div
                             initial={{ opacity: 0, x: -20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             viewport={{ once: true }}
-                            className="aspect-square relative rounded-full overflow-hidden border-4 border-primary/20 shadow-lg max-w-xs mx-auto md:mx-0"
+                            className="md:col-span-2 flex justify-center"
                         >
-                            <Image src={portrait} alt="Portrait" layout="fill" objectFit="cover" />
+                            <div className="aspect-square relative rounded-full overflow-hidden border-4 border-primary/20 shadow-lg w-64 h-64 lg:w-80 lg:h-80">
+                                <Image src={portrait} alt="Portrait" layout="fill" objectFit="cover" />
+                            </div>
                         </motion.div>
 
                         <motion.div
@@ -46,20 +47,20 @@ const AboutSection = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.3 }}
                             viewport={{ once: true }}
+                            className="md:col-span-3"
                         >
                             <div className="bg-secondary/50 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
                             <p className="text-lg mb-4 text-secondary-foreground">
-  I&apos;m a Full Stack Developer with a strong foundation in Java, Spring Boot, React, and modern DevOps tools.
-  I bring a unique blend of backend and frontend expertise, with hands-on experience in web application development,
-  microservices, and risk-focused data analysis.
+  Software Developer with hands-on experience building production systems at Amazon and developing full-stack applications. I combine technical skills with operational expertise to create tools that solve real business problems.
 </p>
 <p className="text-lg mb-4 text-secondary-foreground">
-  Currently, I work at Amazon as an Operations Risk Management Associate. I&apos;m deeply involved in data-driven risk analysis, system
-  automation, and service performance optimization.
+  At Amazon Hamburg, I built a browser extension for our operations team that automates delivery partner notifications through webhook integrations and CI/CD pipelines. I develop web applications using Spring Boot, React.js, and modern cloud technologies.
 </p>
 <p className="text-lg mb-6 text-secondary-foreground">
-  I&apos;m passionate about solving complex problems, improving system resilience, and building scalable, secure, and efficient
-  software.
+  My bachelor thesis project, Pista, is an AI-powered platform for evaluating startup pitches using Next.js, Convex (backend), and Clerk (authentication), demonstrating expertise in integrating modern serverless architectures and handling real-time data processing with GPT-4.
+</p>
+<p className="text-sm mb-4 text-muted-foreground">
+  <strong>Education:</strong> Bachelor of Science in Computer Science, Free University of Bozen-Bolzano (2025)
 </p>
 
 
@@ -93,11 +94,17 @@ const AboutSection = () => {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-start">
-                                    <Link href="/resume.pdf" download>
+                                <div className="flex flex-wrap gap-3 justify-start">
+                                    <Link href="/resume_en.pdf" download>
                                         <Button variant="default">
                                             <Download className="w-4 h-4 mr-2" />
-                                            Download Resume
+                                            Resume (EN)
+                                        </Button>
+                                    </Link>
+                                    <Link href="/resume_de.pdf" download>
+                                        <Button variant="outline">
+                                            <Download className="w-4 h-4 mr-2" />
+                                            Lebenslauf (DE)
                                         </Button>
                                     </Link>
                                 </div>

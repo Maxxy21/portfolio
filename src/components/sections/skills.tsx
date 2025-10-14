@@ -6,29 +6,34 @@ import {BarChart, Code, Database, LineChart, Monitor, Router, Server} from "luci
 
 const skills = [
     {
+        category: "Programming Languages",
+        icon: <Code className="w-10 h-10 text-primary" />,
+        items: ["Java", "Python", "JavaScript", "TypeScript", "C++"]
+    },
+    {
         category: "Frontend Development",
         icon: <Monitor className="w-10 h-10 text-primary" />,
-        items: ["JavaScript", "TypeScript", "React.js", "Next.js", "HTML5", "CSS3", "TailwindCSS"]
+        items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"]
     },
     {
-        category: "Backend Development",
+        category: "Backend & Frameworks",
         icon: <Server className="w-10 h-10 text-primary" />,
-        items: ["Java", "Spring Boot", "Node.js", "RESTful APIs", "Microservices Architecture"]
+        items: ["Spring Boot", "Node.js", "RESTful APIs", "Microservices"]
     },
     {
-        category: "DevOps & Tools",
+        category: "DevOps & Cloud",
+        icon: <Router className="w-10 h-10 text-primary" />,
+        items: ["Docker", "GitHub Actions", "CI/CD", "Terraform", "Kubernetes", "AWS (EC2, S3, Lambda)", "Azure"]
+    },
+    {
+        category: "Databases",
         icon: <Database className="w-10 h-10 text-primary" />,
-        items: ["Docker", "CI/CD", "Git", "Jenkins", "Linux", "PostgreSQL", "MySQL"]
+        items: ["PostgreSQL", "MySQL"]
     },
     {
-        category: "Data & Analysis",
+        category: "Monitoring & Analytics",
         icon: <BarChart className="w-10 h-10 text-primary" />,
-        items: ["Data Analysis", "Risk Assessment", "Performance Monitoring", "Trend Analysis"]
-    },
-    {
-        category: "Core Competencies",
-        icon: <Code className="w-10 h-10 text-primary" />,
-        items: ["Problem Solving", "Agile Development", "Team Collaboration", "Stakeholder Communication"]
+        items: ["Grafana", "Amazon Quicksight", "Data Analysis"]
     }
 ]
 

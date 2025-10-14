@@ -28,17 +28,16 @@ const HeroSection = () => {
                     Maxwell Aboagye
                 </h1>
                 <p className="text-xl md:text-2xl mb-6 text-muted-foreground">
-                    Full Stack Developer | Business Intelligence Analyst
+                    Software Developer | Full-Stack & DevOps
                 </p>
                 <p className="text-lg max-w-2xl mx-auto mb-8 text-secondary-foreground">
-                    Building high-performance web applications and implementing data-driven solutions
-                    at the intersection of software development and risk management
+                    Building production systems that solve real problems. Combining technical expertise with operational insights to create tools that drive business value.
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    <Link href={"#projects"}>
+                    <Link href={"#experience"}>
                         <Button variant="default">
-                            View Projects
+                            View My Journey
                         </Button>
                     </Link>
 

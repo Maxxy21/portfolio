@@ -11,11 +11,19 @@ import Image from "next/image";
 
 const projects = [
     {
-        title: "Pista",
-        description: "A GenAI-powered platform for evaluating startup pitches and providing comprehensive feedback. Upload pitch presentations as text, audio, or files, receive detailed analysis across multiple dimensions, and get actionable insights to improve your pitch deck and increase funding chances.",
+        title: "DSP Management Extension",
+        description: "Automated manual notification workflows for Amazon delivery partners, reducing processing time by 80%. Browser extension with full CI/CD pipeline featuring real-time alerts via Amazon Chime, automated testing, builds, and Mozilla signing. Production system used daily by operations team.",
+        technologies: ["WebExtensions API", "JavaScript", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
+        liveUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
+        githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
+        image: "/projects/dsp.png",
+    },
+    {
+        title: "Pista - AI Startup Pitch Evaluator",
+        description: "Full-stack AI-powered platform that transforms raw pitch recordings into actionable feedback. Leverages GPT-4 for intelligent analysis, providing real-time transcription and multi-dimensional scoring across Market, Team, Product, and Finance dimensions. Bachelor thesis project helping founders improve their pitches before investor meetings.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Convex", "OpenAI", "Clerk"],
-        liveUrl: "https://pista-app.vercel.app/",
-        githubUrl: "https://github.com/maxxy21/pista",
+        liveUrl: "https://pista-app.vercel.app",
+        githubUrl: "https://github.com/Maxxy21/pista",
         image: "/projects/pista1.png",
     },
 ]
