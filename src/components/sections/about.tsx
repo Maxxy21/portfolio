@@ -59,9 +59,9 @@ const AboutSection = () => {
 <p className="text-lg mb-6 text-secondary-foreground">
   My bachelor thesis project, Pista, is an AI-powered platform for evaluating startup pitches using Next.js, Convex (backend), and Clerk (authentication), demonstrating expertise in integrating modern serverless architectures and handling real-time data processing with GPT-4.
 </p>
-<p className="text-sm mb-4 text-muted-foreground">
-  <strong>Education:</strong> Bachelor of Science in Computer Science, Free University of Bozen-Bolzano (2025)
-</p>
+{/*<p className="text-sm mb-4 text-muted-foreground">*/}
+{/*  <strong>Education:</strong> Bachelor of Science in Computer Science, Free University of Bozen-Bolzano (2025)*/}
+{/*</p>*/}
 
 
                                 <div className="mb-6">

@@ -10,6 +10,9 @@ type Particle = {
     vx: number
     vy: number
     alpha: number
+    hue: number
+    pulseSpeed: number
+    pulsePhase: number
 }
 
 const ParticlesBackground = () => {
@@ -33,17 +36,27 @@ const ParticlesBackground = () => {
 
         let animationFrameId: number
         let particles: Particle[] = []
-        const particleCount = 50
-        const particleBaseRadius = 1
-        const particleAddedRadius = 1
-        const connectionDistance = 100
-        const moveSpeed = 0.5
+        let mouseX = 0
+        let mouseY = 0
+        let time = 0
+        const particleCount = 100
+        const particleBaseRadius = 1.5
+        const particleAddedRadius = 2
+        const connectionDistance = 150
+        const moveSpeed = 0.8
+        const mouseInfluence = 100
 
         // Set canvas size
         const handleResize = () => {
             canvas.width = window.innerWidth
             canvas.height = window.innerHeight
             initParticles()
+        }
+
+        // Mouse move handler
+        const handleMouseMove = (e: MouseEvent) => {
+            mouseX = e.clientX
+            mouseY = e.clientY
         }
 
         // Initialize particles
@@ -56,37 +69,72 @@ const ParticlesBackground = () => {
                     radius: particleBaseRadius + Math.random() * particleAddedRadius,
                     vx: (Math.random() - 0.5) * moveSpeed,
                     vy: (Math.random() - 0.5) * moveSpeed,
-                    alpha: 0.1 + Math.random() * 0.4
+                    alpha: 0.2 + Math.random() * 0.6,
+                    hue: Math.random() * 60, // Random hue variation
+                    pulseSpeed: 0.02 + Math.random() * 0.03,
+                    pulsePhase: Math.random() * Math.PI * 2
                 })
             }
         }
 
         // Draw particles
         const drawParticles = () => {
+            time += 0.01
             ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-            // Set color based on theme
-            const particleColor = resolvedTheme === 'dark'
-                ? 'rgba(255, 215, 0, ' // Gold in dark mode
-                : 'rgba(0, 0, 0, '     // Black in light mode
+            // Set base color based on theme
+            const isDark = resolvedTheme === 'dark'
+            const baseHue = isDark ? 45 : 0 // Gold hue for dark, black for light
+            const baseSaturation = isDark ? 95 : 0
+            const baseLightness = isDark ? 53 : 0
 
             // Update and draw particles
             particles.forEach((p, i) => {
-                // Move particles
-                p.x += p.vx
-                p.y += p.vy
+                // Mouse interaction - repel particles
+                const dx = mouseX - p.x
+                const dy = mouseY - p.y
+                const distToMouse = Math.sqrt(dx * dx + dy * dy)
 
-                // Bounce off edges
-                if (p.x < 0 || p.x > canvas.width) p.vx *= -1
-                if (p.y < 0 || p.y > canvas.height) p.vy *= -1
+                if (distToMouse < mouseInfluence) {
+                    const force = (mouseInfluence - distToMouse) / mouseInfluence
+                    p.vx -= (dx / distToMouse) * force * 0.5
+                    p.vy -= (dy / distToMouse) * force * 0.5
+                }
 
-                // Draw particle
+                // Move particles with wave motion
+                p.x += p.vx + Math.sin(time + p.pulsePhase) * 0.2
+                p.y += p.vy + Math.cos(time + p.pulsePhase) * 0.2
+
+                // Apply friction
+                p.vx *= 0.99
+                p.vy *= 0.99
+
+                // Keep particles in bounds with wrapping
+                if (p.x < 0) p.x = canvas.width
+                if (p.x > canvas.width) p.x = 0
+                if (p.y < 0) p.y = canvas.height
+                if (p.y > canvas.height) p.y = 0
+
+                // Pulsing radius
+                const pulseFactor = 1 + Math.sin(time * p.pulseSpeed + p.pulsePhase) * 0.5
+                const currentRadius = p.radius * pulseFactor
+
+                // Dynamic color with hue shift
+                const hue = baseHue + p.hue + Math.sin(time * 0.5 + i) * 20
+                const dynamicAlpha = p.alpha * (0.8 + Math.sin(time + p.pulsePhase) * 0.2)
+
+                // Draw particle with glow
+                const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, currentRadius * 2)
+                gradient.addColorStop(0, `hsla(${hue}, ${baseSaturation}%, ${baseLightness}%, ${dynamicAlpha})`)
+                gradient.addColorStop(0.5, `hsla(${hue}, ${baseSaturation}%, ${baseLightness}%, ${dynamicAlpha * 0.5})`)
+                gradient.addColorStop(1, `hsla(${hue}, ${baseSaturation}%, ${baseLightness}%, 0)`)
+
                 ctx.beginPath()
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2)
-                ctx.fillStyle = `${particleColor}${p.alpha})`
+                ctx.arc(p.x, p.y, currentRadius * 2, 0, Math.PI * 2)
+                ctx.fillStyle = gradient
                 ctx.fill()
 
-                // Draw connections
+                // Draw connections with gradient
                 for (let j = i + 1; j < particles.length; j++) {
                     const p2 = particles[j]
                     const distance = Math.sqrt(
@@ -94,9 +142,17 @@ const ParticlesBackground = () => {
                     )
 
                     if (distance < connectionDistance) {
+                        const connectionStrength = (1 - distance / connectionDistance)
+                        const lineGradient = ctx.createLinearGradient(p.x, p.y, p2.x, p2.y)
+                        const hue1 = baseHue + p.hue + Math.sin(time * 0.5 + i) * 20
+                        const hue2 = baseHue + p2.hue + Math.sin(time * 0.5 + j) * 20
+
+                        lineGradient.addColorStop(0, `hsla(${hue1}, ${baseSaturation}%, ${baseLightness}%, ${dynamicAlpha * connectionStrength * 0.3})`)
+                        lineGradient.addColorStop(1, `hsla(${hue2}, ${baseSaturation}%, ${baseLightness}%, ${p2.alpha * connectionStrength * 0.3})`)
+
                         ctx.beginPath()
-                        ctx.strokeStyle = `${particleColor}${(p.alpha * p2.alpha * 0.25) * (1 - distance / connectionDistance)})`
-                        ctx.lineWidth = 0.7
+                        ctx.strokeStyle = lineGradient
+                        ctx.lineWidth = connectionStrength * 1.5
                         ctx.moveTo(p.x, p.y)
                         ctx.lineTo(p2.x, p2.y)
                         ctx.stroke()
@@ -109,12 +165,14 @@ const ParticlesBackground = () => {
 
         // Initialize
         window.addEventListener('resize', handleResize)
+        window.addEventListener('mousemove', handleMouseMove)
         handleResize()
         drawParticles()
 
         // Cleanup
         return () => {
             window.removeEventListener('resize', handleResize)
+            window.removeEventListener('mousemove', handleMouseMove)
             cancelAnimationFrame(animationFrameId)
         }
     }, [resolvedTheme, mounted])
@@ -124,7 +182,7 @@ const ParticlesBackground = () => {
     return (
         <canvas
             ref={canvasRef}
-            className="fixed top-0 left-0 w-full h-full -z-10 opacity-20"
+            className="fixed top-0 left-0 w-full h-full -z-10 opacity-30"
         />
     )
 }

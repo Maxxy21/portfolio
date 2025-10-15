@@ -2,7 +2,7 @@
 
 
 import { motion } from "framer-motion"
-import {BarChart, Code, Database, LineChart, Monitor, Router, Server} from "lucide-react"
+import {BarChart, Code, Database, Monitor, Router, Server, Smartphone, Brain, TestTube} from "lucide-react"
 
 const skills = [
     {
@@ -13,27 +13,37 @@ const skills = [
     {
         category: "Frontend Development",
         icon: <Monitor className="w-10 h-10 text-primary" />,
-        items: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"]
+        items: ["React.js", "Next.js 15", "React Native", "Expo", "HTML5", "CSS3", "Tailwind CSS"]
     },
     {
         category: "Backend & Frameworks",
         icon: <Server className="w-10 h-10 text-primary" />,
-        items: ["Spring Boot", "Node.js", "RESTful APIs", "Microservices"]
+        items: ["Spring Boot", "Node.js", "RESTful APIs", "Microservices", "Convex", "WebExtensions API"]
     },
+    // {
+    //     category: "AI & Machine Learning",
+    //     icon: <Brain className="w-10 h-10 text-primary" />,
+    //     items: ["OpenAI GPT-4", "Claude", "Gemini", "AI Integration", "Prompt Engineering"]
+    // },
     {
         category: "DevOps & Cloud",
         icon: <Router className="w-10 h-10 text-primary" />,
-        items: ["Docker", "GitHub Actions", "CI/CD", "Terraform", "Kubernetes", "AWS (EC2, S3, Lambda)", "Azure"]
+        items: ["Docker", "GitHub Actions", "CI/CD", "Terraform", "Kubernetes", "AWS (EC2, S3, Lambda)", "Azure", "Webhooks"]
     },
     {
-        category: "Databases",
+        category: "Databases & Storage",
         icon: <Database className="w-10 h-10 text-primary" />,
-        items: ["PostgreSQL", "MySQL"]
+        items: ["PostgreSQL", "MySQL", "Convex Database", "Prisma"]
     },
+    // {
+    //     category: "Testing & Quality",
+    //     icon: <TestTube className="w-10 h-10 text-primary" />,
+    //     items: ["Jest", "Automated Testing", "Error Boundaries", "Code Quality Tools"]
+    // },
     {
         category: "Monitoring & Analytics",
         icon: <BarChart className="w-10 h-10 text-primary" />,
-        items: ["Grafana", "Amazon Quicksight", "Data Analysis"]
+        items: ["Grafana", "Amazon Quicksight", "Data Analysis", "KPI Dashboards"]
     }
 ]
 

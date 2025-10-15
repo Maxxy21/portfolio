@@ -1,12 +1,12 @@
 "use client"
 
 import {motion} from "framer-motion"
-import {Briefcase, Calendar, Building, ExternalLink, GraduationCap, Rocket, Code2} from "lucide-react"
+import {Briefcase, Calendar, Building, ExternalLink, GraduationCap} from "lucide-react"
 import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
 import Link from "next/link";
 
-type TimelineItemType = "education" | "project" | "work";
+type TimelineItemType = "education" | "work";
 
 interface TimelineItem {
     type: TimelineItemType;
@@ -21,35 +21,6 @@ interface TimelineItem {
 }
 
 const timelineData: TimelineItem[] = [
-    {
-        type: "education",
-        title: "Bachelor of Science in Computer Science",
-        subtitle: "Free University of Bozen-Bolzano",
-        location: "Bolzano, Italy",
-        period: "2019 - 2025",
-        description: [
-            "Specialized in Algorithms, Data Structures, and Distributed Systems",
-            "Focus on practical software engineering and full-stack development",
-            "Graduated with thesis on AI-powered startup pitch evaluation"
-        ],
-        skills: ["Algorithms", "Data Structures", "Distributed Systems", "Software Engineering"],
-        icon: <GraduationCap className="h-5 w-5" />
-    },
-    {
-        type: "project",
-        title: "Pista - AI Startup Pitch Evaluator",
-        subtitle: "Bachelor Thesis Project",
-        location: "Independent Project",
-        period: "2024 - 2025",
-        description: [
-            "Built full-stack AI platform with Next.js, Convex, and Clerk authentication",
-            "Integrated GPT-4 for intelligent pitch analysis and real-time feedback",
-            "Multi-dimensional scoring system for Problem-Solution Fit, Team, Business Model, and Pitch Quality"
-        ],
-        skills: ["Next.js", "Convex", "GPT-4", "TypeScript", "Clerk"],
-        link: "https://pista-app.vercel.app",
-        icon: <Code2 className="h-5 w-5" />
-    },
     {
         type: "work",
         title: "On-Road Management Associate",
@@ -67,20 +38,18 @@ const timelineData: TimelineItem[] = [
         icon: <Briefcase className="h-5 w-5" />
     },
     {
-        type: "project",
-        title: "DSP Management Extension",
-        subtitle: "Internal Tool Built at Amazon",
-        location: "Amazon Hamburg",
-        period: "2024",
+        type: "education",
+        title: "Bachelor of Science in Computer Science",
+        subtitle: "Free University of Bozen-Bolzano",
+        location: "Bolzano, Italy",
+        period: "2019 - 2025",
         description: [
-            "Automated delivery partner notification workflows, reducing processing time by 80%",
-            "Built full CI/CD pipeline with GitHub Actions and Mozilla signing",
-            "Production system with automated testing and real-time alerts via Amazon Chime",
-            "Daily usage by operations team for streamlined delivery partner communication"
+            "Specialized in Algorithms, Data Structures, and Distributed Systems",
+            "Focus on practical software engineering and full-stack development",
+            "Graduated with thesis on AI-powered startup pitch evaluation"
         ],
-        skills: ["WebExtensions API", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
-        link: "https://github.com/Maxxy21/dsp-extension-hosting",
-        icon: <Rocket className="h-5 w-5" />
+        skills: ["Algorithms", "Data Structures", "Distributed Systems", "Software Engineering"],
+        icon: <GraduationCap className="h-5 w-5" />
     },
 ]
 
@@ -88,8 +57,6 @@ const getTypeColor = (type: TimelineItemType) => {
     switch (type) {
         case "education":
             return "bg-blue-500/20 border-blue-500/50 text-blue-400";
-        case "project":
-            return "bg-purple-500/20 border-purple-500/50 text-purple-400";
         case "work":
             return "bg-primary/20 border-primary/50 text-primary";
         default:
@@ -101,8 +68,6 @@ const getTypeLabel = (type: TimelineItemType) => {
     switch (type) {
         case "education":
             return "Education";
-        case "project":
-            return "Project";
         case "work":
             return "Work";
         default:
@@ -137,7 +102,7 @@ const ExperienceSection = () => {
                     <div className="relative pl-8 md:pl-12 space-y-8">
                         {/* Animated timeline line */}
                         <motion.div
-                            className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-primary/50"
+                            className="absolute left-4 md:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/50 to-blue-500/50"
                             initial={{height: 0}}
                             whileInView={{height: "100%"}}
                             transition={{duration: 1.5, ease: "easeOut"}}
