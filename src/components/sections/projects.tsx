@@ -53,7 +53,18 @@ const projectsData: Project[] = [
         technologies: ["Java", "Maven", "Multithreading", "REST API", "Gson", "Jackson", "Log4j", "JUnit"],
         githubUrl: "https://github.com/Maxxy21/Programming-Project-OpenHub",
         image: "/projects/openhub.png",
+    },
+    {
+        title: "C Language Compiler",
+        subtitle: "Lexer, Parser & Semantic Analyzer",
+        description: "Complete compiler implementation featuring lexical analysis with Flex, LALR(1) parsing with Bison, and strict static type checking. Implements single-pass compilation with symbol table management," +
+            "type-checked operations, and comprehensive error recovery. Supports arithmetic/logical operations, control flow, and provides detailed diagnostics with line-accurate error reporting.",
+        technologies: ["C", "Flex", "Bison", "LALR Parsing", "Symbol Tables", "Type Theory"],
+        liveUrl: null,
+        githubUrl: "https://github.com/maxxy21/simple-c-compiler",
+        image: "/projects/compiler.png",
     }
+
 ]
 
 const ProjectsSection = () => {
