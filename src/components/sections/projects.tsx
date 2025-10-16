@@ -45,6 +45,15 @@ const projectsData: Project[] = [
         githubUrl: "https://github.com/Maxxy21/Wordle-React-Native",
         image: "/projects/wordle.png",
     },
+    {
+        title: "OpenHub Tourism Data Analyzer",
+        subtitle: "Multithreaded Data Processing Pipeline",
+        description: "Production-grade Java application processing tourism activity data from Open Data Hub API with multithreaded architecture. Implemented parallel data fetching and validation pipeline, JSON schema " +
+            "validation, and statistical analysis across 1000+ activities. Optimized memory allocation to handle large-scale data processing with zero errors.",
+        technologies: ["Java", "Maven", "Multithreading", "REST API", "Gson", "Jackson", "Log4j", "JUnit"],
+        githubUrl: "https://github.com/Maxxy21/Programming-Project-OpenHub",
+        image: "/projects/openhub.png",
+    }
 ]
 
 const ProjectsSection = () => {
@@ -88,7 +97,8 @@ const ProjectsSection = () => {
 
                                             <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                                                 <Button size="sm" variant="secondary">
-                                                    <Image src={gitHub} alt="GitHub" width={16} height={16} className="mr-2"/>
+                                                    <Image src={gitHub} alt="GitHub" width={16} height={16}
+                                                           className="mr-2"/>
                                                     Code
                                                 </Button>
                                             </Link>
