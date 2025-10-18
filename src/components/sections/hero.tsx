@@ -31,8 +31,8 @@ const HeroSection = () => {
                     Software Developer | Full-Stack & DevOps
                 </p>
                 <p className="text-lg max-w-2xl mx-auto mb-8 text-secondary-foreground">
-                    Building production systems that solve real problems. Combining technical expertise with operational insights to create tools that drive business value.
-                </p>
+    I build tools that people actually use. From browser extensions that save teams hours of manual work to full-stack applications with real-time data processing. Currently at Amazon Hamburg, shipping production code and automating workflows.
+</p>
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     <Link href={"#experience"}>

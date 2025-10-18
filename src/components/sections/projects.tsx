@@ -22,7 +22,7 @@ const projectsData: Project[] = [
     {
         title: "Pista - AI Startup Pitch Evaluator",
         subtitle: "Bachelor Thesis Project",
-        description: "GenAI-powered platform transforming pitch recordings into actionable feedback with GPT-4 analysis, real-time transcription, and multi-dimensional scoring across Market, Team, Product, and Finance.",
+       description: "AI tool that listens to startup pitches and gives feedback on what's working and what's not. Record your pitch, and it scores you on problem-solution fit, business model, pitch quality, and team.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Convex", "OpenAI", "Clerk"],
         liveUrl: "https://pista-app.vercel.app",
         githubUrl: "https://github.com/Maxxy21/startup-pitches",
@@ -31,7 +31,7 @@ const projectsData: Project[] = [
     {
         title: "DSP Management Extension",
         subtitle: "Production Tool at Amazon",
-        description: "Browser extension automating delivery partner workflows with 80% time reduction. Full CI/CD pipeline with GitHub Actions, Mozilla signing, and real-time Amazon Chime alerts used daily by operations team.",
+        description: "Browser extension that saves our operations team about 15 minutes per notification cycle. Used to be: copy table from portal, process in Excel, manually message each delivery partner. Now: one click. Set up the full CI/CD pipeline with GitHub Actions.",
         technologies: ["WebExtensions API", "JavaScript", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
         githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
         image: "/projects/dsp.png",
@@ -39,7 +39,7 @@ const projectsData: Project[] = [
     {
         title: "Wordle React Native",
         subtitle: "Cross-Platform Mobile Game",
-        description: "Production-ready word game with Wordle and Dordle modes. TypeScript strict mode, modular architecture, error boundaries, Jest testing, and statistics tracking for iOS, Android, and Web.",
+       description: "Built Wordle for mobile because I wanted to learn React Native. Cross-platform (iOS/Android/Web) with game stats, hard mode, and all the usual Wordle features. Used Context API for state management and AsyncStorage so your stats persist between sessions.",
         technologies: ["React Native", "React", "TypeScript", "Expo", "Jest"],
         liveUrl: null,
         githubUrl: "https://github.com/Maxxy21/Wordle-React-Native",
@@ -48,8 +48,7 @@ const projectsData: Project[] = [
     {
         title: "OpenHub Tourism Data Analyzer",
         subtitle: "Multithreaded Data Processing Pipeline",
-        description: "Production-grade Java application processing tourism activity data from Open Data Hub API with multithreaded architecture. Implemented parallel data fetching and validation pipeline, JSON schema " +
-            "validation, and statistical analysis across 1000+ activities. Optimized memory allocation to handle large-scale data processing with zero errors.",
+        description: "Java application that pulls and processes 10,000+ tourism records from an API. Hit a memory issue where the app would crash on large datasets—traced it to the HTTP library. Switched libraries and optimized JVM memory allocation to handle the full dataset without errors.",
         technologies: ["Java", "Maven", "Multithreading", "REST API", "Gson", "Jackson", "Log4j", "JUnit"],
         githubUrl: "https://github.com/Maxxy21/Programming-Project-OpenHub",
         image: "/projects/openhub.png",
@@ -57,8 +56,7 @@ const projectsData: Project[] = [
     {
         title: "C Language Compiler",
         subtitle: "Lexer, Parser & Semantic Analyzer",
-        description: "Complete compiler implementation featuring lexical analysis with Flex, LALR(1) parsing with Bison, and strict static type checking. Implements single-pass compilation with symbol table management," +
-            "type-checked operations, and comprehensive error recovery. Supports arithmetic/logical operations, control flow, and provides detailed diagnostics with line-accurate error reporting.",
+       description: "Compiler that turns C code into executable programs. Built the lexer with Flex, parser with Bison, and added type checking so it catches errors like adding strings to numbers. Supports variables, control flow, and gives you line numbers when something breaks. University project that taught me how compilers actually work under the hood.",
         technologies: ["C", "Flex", "Bison", "LALR Parsing", "Symbol Tables", "Type Theory"],
         liveUrl: null,
         githubUrl: "https://github.com/maxxy21/simple-c-compiler",

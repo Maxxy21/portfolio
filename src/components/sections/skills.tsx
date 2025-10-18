@@ -41,10 +41,10 @@ const skills = [
     //     items: ["Jest", "Automated Testing", "Error Boundaries", "Code Quality Tools"]
     // },
     {
-        category: "Monitoring & Analytics",
-        icon: <BarChart className="w-10 h-10 text-primary" />,
-        items: ["Grafana", "Amazon Quicksight", "Data Analysis", "KPI Dashboards"]
-    }
+    category: "Monitoring & Analytics",
+    icon: <BarChart className="w-10 h-10 text-primary" />,
+    items: ["Excel (VBA, Macros)", "Grafana", "Amazon Quicksight", "Elasticsearch", "Tableau", "Power BI"]
+}
 ]
 
 

@@ -27,12 +27,12 @@ const timelineData: TimelineItem[] = [
         subtitle: "Amazon",
         location: "Hamburg, Germany",
         period: "November 2024 - Present",
-        description: [
-            "Monitor and analyze real-time delivery risks using internal tools and operational data",
-            "Built browser extension with full CI/CD pipeline using GitHub Actions",
-            "Automated testing, builds, and Mozilla signing with webhook integration",
-            "Create dashboards in Amazon Quicksight and Grafana to visualize KPIs"
-        ],
+       description: [
+    "Built browser extension that automates delivery partner communication—reduced 15-minute manual process to one-click operation, now used daily by operations team",
+    "Created custom Grafana dashboards with Elasticsearch queries to surface metrics that existing monitoring tools don't show",
+    "Set up full CI/CD pipeline with GitHub Actions, automated Mozilla signing, and Amazon Chime webhooks so the team can deploy without touching code",
+    "Monitor delivery operations data across Hamburg network to catch and address issues before they escalate"
+],
         skills: ["GitHub Actions", "CI/CD", "Amazon Quicksight", "Grafana", "Data Analysis", "Risk Management"],
         link: "https://amazon.com",
         icon: <Briefcase className="h-5 w-5" />
@@ -44,10 +44,10 @@ const timelineData: TimelineItem[] = [
         location: "Bolzano, Italy",
         period: "2019 - 2025",
         description: [
-            "Specialized in Algorithms, Data Structures, and Distributed Systems",
-            "Focus on practical software engineering and full-stack development",
-            "Graduated with thesis on AI-powered startup pitch evaluation"
-        ],
+    "Focused on algorithms, data structures, and distributed systems",
+    "Bachelor thesis: built an AI-powered platform for evaluating startup pitches using GPT-4 and real-time data processing",
+    "Learned by building—projects ranged from compilers to full-stack web apps"
+],
         skills: ["Algorithms", "Data Structures", "Distributed Systems", "Software Engineering"],
         icon: <GraduationCap className="h-5 w-5" />
     },
@@ -94,9 +94,9 @@ const ExperienceSection = () => {
                     transition={{duration: 0.6, delay: 0.1}}
                     viewport={{once: true}}
                     className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
-                >
-                    From computer science student to building production systems at Amazon
-                </motion.p>
+>
+    Recent CS grad working at Amazon while building side projects
+</motion.p>
 
                 <div className="max-w-5xl mx-auto">
                     <div className="relative pl-8 md:pl-12 space-y-8">

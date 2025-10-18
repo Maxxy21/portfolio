@@ -51,17 +51,14 @@ const AboutSection = () => {
                         >
                             <div className="bg-secondary/50 backdrop-blur-lg p-8 rounded-2xl shadow-lg">
                             <p className="text-lg mb-4 text-secondary-foreground">
-  Software Developer with hands-on experience building production systems at Amazon and developing full-stack applications. I combine technical skills with operational expertise to create tools that solve real business problems.
+   I&apos;m a software developer who likes solving annoying problems with code. Currently at Amazon Hamburg, where I built a browser extension that automated a tedious 15-minute workflow down to a single click for our operations team.
 </p>
 <p className="text-lg mb-4 text-secondary-foreground">
-  At Amazon Hamburg, I built a browser extension for our operations team that automates delivery partner notifications through webhook integrations and CI/CD pipelines. I develop web applications using Spring Boot, React.js, and modern cloud technologies.
+    I work across the full stack—React/TypeScript on the frontend, Spring Boot and Node.js on the backend, and I set up CI/CD pipelines so deployments don't require hand-holding. My bachelor thesis was an AI pitch evaluator that helps startups get better feedback on their presentations.
 </p>
 <p className="text-lg mb-6 text-secondary-foreground">
-  My bachelor thesis project, Pista, is an AI-powered platform for evaluating startup pitches using Next.js, Convex (backend), and Clerk (authentication), demonstrating expertise in integrating modern serverless architectures and handling real-time data processing with GPT-4.
+   I&apos;m comfortable jumping between building user interfaces, debugging backend issues, and figuring out why the deployment pipeline broke (again). If there's a repetitive task that's wasting people's time, I'll probably try to automate it.
 </p>
-{/*<p className="text-sm mb-4 text-muted-foreground">*/}
-{/*  <strong>Education:</strong> Bachelor of Science in Computer Science, Free University of Bozen-Bolzano (2025)*/}
-{/*</p>*/}
 
 
                                 <div className="mb-6">
