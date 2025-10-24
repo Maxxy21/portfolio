@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
 import {SpeedInsights} from "@vercel/speed-insights/next"
-import {ThemeProvider} from "next-themes"
+import {Providers} from "@/components/providers"
 import './globals.css'
 import '@fontsource/sen'
 
@@ -41,10 +41,10 @@ export default function RootLayout({
     return (
         <html lang="en" suppressHydrationWarning>
         <body>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+        <Providers>
             {children}
             <SpeedInsights/>
-        </ThemeProvider>
+        </Providers>
         </body>
         </html>
     )
