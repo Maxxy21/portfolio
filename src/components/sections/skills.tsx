@@ -20,11 +20,11 @@ const skills = [
         icon: <Server className="w-10 h-10 text-primary" />,
         items: ["Spring Boot", "Node.js", "RESTful APIs", "Microservices", "Convex", "WebExtensions API"]
     },
-    // {
-    //     category: "AI & Machine Learning",
-    //     icon: <Brain className="w-10 h-10 text-primary" />,
-    //     items: ["OpenAI GPT-4", "Claude", "Gemini", "AI Integration", "Prompt Engineering"]
-    // },
+    {
+        category: "AI & Machine Learning",
+        icon: <Brain className="w-10 h-10 text-primary" />,
+        items: ["OpenAI GPT-4", "Claude API", "Gemini", "AI Integration", "Prompt Engineering", "LangChain"]
+    },
     {
         category: "DevOps & Cloud",
         icon: <Router className="w-10 h-10 text-primary" />,
@@ -35,11 +35,11 @@ const skills = [
         icon: <Database className="w-10 h-10 text-primary" />,
         items: ["PostgreSQL", "MySQL", "Convex Database", "Prisma"]
     },
-    // {
-    //     category: "Testing & Quality",
-    //     icon: <TestTube className="w-10 h-10 text-primary" />,
-    //     items: ["Jest", "Automated Testing", "Error Boundaries", "Code Quality Tools"]
-    // },
+    {
+        category: "Testing & Quality",
+        icon: <TestTube className="w-10 h-10 text-primary" />,
+        items: ["Cypress.io", "Jest", "JUnit", "Automated Testing", "End-to-End Testing", "Test-Driven Development"]
+    },
     {
     category: "Monitoring & Analytics",
     icon: <BarChart className="w-10 h-10 text-primary" />,

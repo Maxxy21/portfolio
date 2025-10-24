@@ -3,8 +3,9 @@
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import {motion} from 'framer-motion'
-import {Menu, X} from 'lucide-react'
+import {Menu, X, Moon, Sun} from 'lucide-react'
 import {Button} from '@/components/ui/button'
+import {useTheme} from 'next-themes'
 
 interface NavItem {
     label: string
@@ -38,6 +39,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [mounted, setMounted] = useState(false)
+    const {theme, setTheme} = useTheme()
 
     // After mounting, we can safely show the UI that depends on theme
     useEffect(() => {
@@ -106,11 +108,34 @@ const Navbar = () => {
                         ))}
 
                         {/* Theme Toggle */}
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            aria-label="Toggle theme"
+                        >
+                            {theme === 'dark' ? (
+                                <Sun className="h-5 w-5" />
+                            ) : (
+                                <Moon className="h-5 w-5" />
+                            )}
+                        </Button>
                     </nav>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center gap-2">
-
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            aria-label="Toggle theme"
+                        >
+                            {theme === 'dark' ? (
+                                <Sun className="h-5 w-5" />
+                            ) : (
+                                <Moon className="h-5 w-5" />
+                            )}
+                        </Button>
                         <Button
                             variant="ghost"
                             size="icon"

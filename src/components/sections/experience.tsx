@@ -28,10 +28,10 @@ const timelineData: TimelineItem[] = [
         location: "Hamburg, Germany",
         period: "November 2024 - Present",
        description: [
-    "Built browser extension that automates delivery partner communication—reduced 15-minute manual process to one-click operation, now used daily by operations team",
-    "Created custom Grafana dashboards with Elasticsearch queries to surface metrics that existing monitoring tools don't show",
-    "Set up full CI/CD pipeline with GitHub Actions, automated Mozilla signing, and Amazon Chime webhooks so the team can deploy without touching code",
-    "Monitor delivery operations data across Hamburg network to catch and address issues before they escalate"
+    "Built browser extension that automates delivery partner communication—reduced 15-minute manual process to one-click operation (93% time savings), now used daily by operations team",
+    "Created custom Grafana dashboards with Elasticsearch queries to surface metrics that existing monitoring tools don't show, enabling proactive issue detection",
+    "Set up full CI/CD pipeline with GitHub Actions, automated Mozilla signing, and Amazon Chime webhooks—reduced deployment time from manual process to automated 5-minute releases",
+    "Monitor delivery operations data across Hamburg network to catch and address issues before they escalate, improving operational efficiency"
 ],
         skills: ["GitHub Actions", "CI/CD", "Amazon Quicksight", "Grafana", "Data Analysis", "Risk Management"],
         link: "https://amazon.com",
@@ -44,12 +44,28 @@ const timelineData: TimelineItem[] = [
         location: "Bolzano, Italy",
         period: "2019 - 2025",
         description: [
-    "Focused on algorithms, data structures, and distributed systems",
-    "Bachelor thesis: built an AI-powered platform for evaluating startup pitches using GPT-4 and real-time data processing",
-    "Learned by building—projects ranged from compilers to full-stack web apps"
+    "Focused on algorithms, data structures, and distributed systems with strong practical application",
+    "Bachelor thesis: built an AI-powered platform for evaluating startup pitches using GPT-4 and real-time data processing with Convex",
+    "Learned by building—projects ranged from compilers and multithreaded data processors to full-stack web applications"
 ],
         skills: ["Algorithms", "Data Structures", "Distributed Systems", "Software Engineering"],
         icon: <GraduationCap className="h-5 w-5" />
+    },
+    {
+        type: "work",
+        title: "Software Development Intern",
+        subtitle: "EWO",
+        location: "Bolzano, Italy",
+        period: "2021 - 2022 (6 months)",
+        description: [
+    "Developed and maintained React.js web applications for enterprise clients using Redux for state management",
+    "Wrote end-to-end tests with Cypress.io to ensure application reliability and catch bugs before production",
+    "Collaborated in an Agile team environment with daily standups, sprint planning, and code reviews",
+    "Used Git for version control and worked with pull request workflows to maintain code quality"
+],
+        skills: ["React.js", "JavaScript", "Redux.js", "Cypress.io", "Agile Methodologies", "Git"],
+        link: "https://www.ewo.it",
+        icon: <Briefcase className="h-5 w-5" />
     },
 ]
 
