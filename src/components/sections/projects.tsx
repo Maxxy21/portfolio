@@ -17,27 +17,30 @@ interface Project {
     githubUrl: string;
     image: string;
     featured?: boolean;
+    techHighlight?: string;
 }
 
 const projectsData: Project[] = [
     {
         title: "Pista - AI Startup Pitch Evaluator",
         subtitle: "Bachelor Thesis Project",
-       description: "AI tool that listens to startup pitches and gives feedback on what's working and what's not. Record your pitch, and it scores you on problem-solution fit, business model, pitch quality, and team.",
+       description: "Startups struggle to get objective feedback on their pitches before investor meetings. Built an AI-powered platform where founders record their pitch and get instant, structured feedback on problem-solution fit, business model, team presentation, and overall pitch quality. Uses GPT-4 for evaluation with real-time data sync via Convex.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Convex", "OpenAI", "Clerk"],
         liveUrl: "https://pista-app.vercel.app",
         githubUrl: "https://github.com/Maxxy21/startup-pitches",
         image: "/projects/pista1.png",
         featured: true,
+        techHighlight: "Real-time data processing with Convex ensures pitch evaluations are instantly synced across devices. Integrated OpenAI's GPT-4 with custom prompts for structured startup analysis.",
     },
     {
         title: "DSP Management Extension",
         subtitle: "Production Tool at Amazon",
-        description: "Browser extension that saves our operations team about 15 minutes per notification cycle. Automates the workflow of copying tables from portal, processing in Excel, and messaging each delivery partner. Now it's just one click. Set up the full CI/CD pipeline with GitHub Actions.",
+        description: "Operations teams were manually copying delivery partner data from internal portals, processing it in Excel, then messaging each partner individually, taking 15 minutes per cycle. Built a browser extension that automates the entire workflow with one click. Now used daily by the Hamburg operations team.",
         technologies: ["WebExtensions API", "JavaScript", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
         githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
         image: "/projects/dsp.png",
         featured: true,
+        techHighlight: "Set up automated CI/CD pipeline with GitHub Actions for Mozilla signing and deployment. Integrated Amazon Chime webhooks for instant team notifications on releases.",
     },
     {
         title: "Wordle React Native",
@@ -126,7 +129,15 @@ const ProjectsSection = () => {
                                 </div>
                                 <div className="p-6 flex-1 flex flex-col">
                                     <h3 className="text-xl font-semibold mb-2 text-primary">{project.title}</h3>
-                                    <p className="text-sm text-secondary-foreground mb-4 flex-1">{project.description}</p>
+                                    <p className="text-sm text-secondary-foreground mb-4">{project.description}</p>
+
+                                    {project.techHighlight && (
+                                        <div className="mb-4 p-3 bg-primary/10 border-l-4 border-primary rounded-r">
+                                            <p className="text-xs font-semibold text-primary mb-1">💡 Tech Highlight</p>
+                                            <p className="text-xs text-secondary-foreground">{project.techHighlight}</p>
+                                        </div>
+                                    )}
+
                                     <div className="flex flex-wrap gap-2 mt-auto">
                                         {project.technologies.map((tech) => (
                                             <Badge key={tech} variant="outline"

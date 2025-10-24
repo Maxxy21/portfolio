@@ -39,6 +39,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [mounted, setMounted] = useState(false)
+    const [activeSection, setActiveSection] = useState('')
     const {theme, setTheme} = useTheme()
 
     // After mounting, we can safely show the UI that depends on theme
@@ -53,6 +54,22 @@ const Navbar = () => {
                 setIsScrolled(true)
             } else {
                 setIsScrolled(false)
+            }
+
+            // Determine active section
+            const sections = ['about', 'experience', 'projects', 'skills', 'contact']
+            const scrollPosition = window.scrollY + 100
+
+            for (const section of sections) {
+                const element = document.getElementById(section)
+                if (element) {
+                    const offsetTop = element.offsetTop
+                    const offsetBottom = offsetTop + element.offsetHeight
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+                        setActiveSection(`#${section}`)
+                        break
+                    }
+                }
             }
         }
 
@@ -91,7 +108,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="text-2xl font-bold gradient-text">
+                    <Link href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-2xl font-bold gradient-text cursor-pointer">
                         Maxwell
                     </Link>
 
@@ -101,7 +118,11 @@ const Navbar = () => {
                             <Link
                                 key={item.label}
                                 href={item.page}
-                                className="text-sm text-foreground hover:text-primary transition-colors duration-300"
+                                className={`text-sm transition-colors duration-300 ${
+                                    activeSection === item.page
+                                        ? 'text-primary font-semibold border-b-2 border-primary'
+                                        : 'text-foreground hover:text-primary'
+                                }`}
                             >
                                 {item.label}
                             </Link>

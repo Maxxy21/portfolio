@@ -33,7 +33,7 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                             className="md:col-span-2 flex justify-center"
                         >
-                            <div className="aspect-square relative rounded-full overflow-hidden border-4 border-primary/20 shadow-lg w-64 h-64 lg:w-80 lg:h-80">
+                            <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border-4 border-primary/20 shadow-lg w-full max-w-sm">
                                 <Image src={portrait} alt="Portrait" layout="fill" objectFit="cover" />
                             </div>
                         </motion.div>

@@ -42,6 +42,9 @@ const Footer = () => {
                         <p className="text-sm text-muted-foreground">
                             © {currentYear} Maxwell Aboagye. All rights reserved.
                         </p>
+                        <p className="text-xs text-muted-foreground mt-1">
+                            Last updated: October 2025
+                        </p>
                     </div>
                 </div>
             </div>
