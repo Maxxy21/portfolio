@@ -64,7 +64,7 @@ const timelineData: TimelineItem[] = [
     "Used Git for version control and worked with pull request workflows to maintain code quality"
 ],
         skills: ["React.js", "JavaScript", "Redux.js", "Cypress.io", "Agile Methodologies", "Git"],
-        link: "https://www.ewo.it",
+        link: "https://www.ewo.com",
         icon: <Briefcase className="h-5 w-5" />
     },
 ]
