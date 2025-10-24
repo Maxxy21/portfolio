@@ -31,19 +31,19 @@ const HeroSection = () => {
                     Software Developer | Full-Stack & DevOps
                 </p>
                 <p className="text-lg max-w-2xl mx-auto mb-8 text-secondary-foreground">
-    I build tools that people actually use. From browser extensions that save teams hours of manual work to full-stack applications with real-time data processing. Currently at Amazon Hamburg, shipping production code and automating workflows.
+    I build tools that solve real problems. At Amazon, I automated a 15-minute manual workflow into a one-click browser extension used daily by operations teams. I work full-stack with React, Java, and DevOps, turning repetitive tasks into automated systems.
 </p>
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    <Link href={"#experience"}>
+                    <Link href={"#projects"}>
                         <Button variant="default">
-                            View My Journey
+                            See What I&apos;ve Built
                         </Button>
                     </Link>
 
                     <Link href={"#contact"}>
                         <Button variant="outline">
-                            Contact Me
+                            Let&apos;s Talk
                         </Button>
                     </Link>
                 </div>

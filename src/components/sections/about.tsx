@@ -7,16 +7,12 @@ import Image from "next/image"
 import portrait from "../../assets/portrait.jpg"
 import Link from "next/link";
 
-// Language proficiency data
-const languages = [
-    { language: "English", level: "Native", proficiency: 100 },
-    { language: "German", level: "B2", proficiency: 75 },
-    { language: "Italian", level: "C1", proficiency: 90 }
-]
+// Languages
+const languages = "English (Native) • German (B2) • Italian (C1)"
 
 const AboutSection = () => {
     return (
-        <section id="about" className="py-20 animated-bg">
+        <section id="about" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -66,29 +62,9 @@ const AboutSection = () => {
                                         <Globe className="mr-2 h-5 w-5" />
                                         Languages
                                     </h3>
-                                    <div className="space-y-3">
-                                        {languages.map((lang) => (
-                                            <div key={lang.language}>
-                                                <div className="flex justify-between items-center mb-1">
-                                                    <span className="text-secondary-foreground">
-                                                        {lang.language}
-                                                        <span className="ml-2 text-sm text-muted-foreground">
-                                                            {lang.level}
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                                <div className="h-2 w-full bg-background/50 rounded-full overflow-hidden">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        whileInView={{ width: `${lang.proficiency}%` }}
-                                                        transition={{ duration: 1, delay: 0.5 }}
-                                                        viewport={{ once: true }}
-                                                        className="h-full bg-primary rounded-full"
-                                                    />
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <p className="text-secondary-foreground">
+                                        {languages}
+                                    </p>
                                 </div>
 
                                 <div className="flex flex-wrap gap-3 justify-start">

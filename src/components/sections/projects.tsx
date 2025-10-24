@@ -16,6 +16,7 @@ interface Project {
     liveUrl?: string | null;
     githubUrl: string;
     image: string;
+    featured?: boolean;
 }
 
 const projectsData: Project[] = [
@@ -27,6 +28,7 @@ const projectsData: Project[] = [
         liveUrl: "https://pista-app.vercel.app",
         githubUrl: "https://github.com/Maxxy21/startup-pitches",
         image: "/projects/pista1.png",
+        featured: true,
     },
     {
         title: "DSP Management Extension",
@@ -35,6 +37,7 @@ const projectsData: Project[] = [
         technologies: ["WebExtensions API", "JavaScript", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
         githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
         image: "/projects/dsp.png",
+        featured: true,
     },
     {
         title: "Wordle React Native",
@@ -67,7 +70,7 @@ const projectsData: Project[] = [
 
 const ProjectsSection = () => {
     return (
-        <section id="projects" className="py-20 animated-bg">
+        <section id="projects" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
                 <motion.h2
                     initial={{opacity: 0, y: 20}}
@@ -91,6 +94,13 @@ const ProjectsSection = () => {
                             <div
                                 className="bg-secondary/50 backdrop-blur-lg border border-primary/10 rounded-xl overflow-hidden h-full flex flex-col hover:border-primary/30 transition-all duration-300 shadow-lg">
                                 <div className="aspect-video relative overflow-hidden bg-background/50">
+                                    {project.featured && (
+                                        <div className="absolute top-3 right-3 z-10">
+                                            <Badge className="bg-primary text-primary-foreground font-semibold">
+                                                Featured
+                                            </Badge>
+                                        </div>
+                                    )}
                                     <Image src={project.image} alt={project.title} layout="fill" objectFit="cover"/>
                                     <div
                                         className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center opacity-0">
