@@ -51,6 +51,11 @@
     * {
         @apply border-border;
     }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         @apply bg-background text-foreground;
         line-height: 1.7;
@@ -80,6 +85,19 @@
 
 .gradient-text {
     @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-yellow-500 to-orange-500;
+}
+
+/* Button hover animations */
+button, .button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:hover, .button:hover {
+    transform: translateY(-2px);
+}
+
+button:active, .button:active {
+    transform: translateY(0);
 }
 
 .dark .animated-bg {

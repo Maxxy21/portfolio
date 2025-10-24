@@ -17,7 +17,6 @@ interface Project {
     githubUrl: string;
     image: string;
     featured?: boolean;
-    techHighlight?: string;
 }
 
 const projectsData: Project[] = [
@@ -30,7 +29,6 @@ const projectsData: Project[] = [
         githubUrl: "https://github.com/Maxxy21/startup-pitches",
         image: "/projects/pista1.png",
         featured: true,
-        techHighlight: "Real-time data processing with Convex ensures pitch evaluations are instantly synced across devices. Integrated OpenAI's GPT-4 with custom prompts for structured startup analysis.",
     },
     {
         title: "DSP Management Extension",
@@ -40,7 +38,6 @@ const projectsData: Project[] = [
         githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
         image: "/projects/dsp.png",
         featured: true,
-        techHighlight: "Set up automated CI/CD pipeline with GitHub Actions for Mozilla signing and deployment. Integrated Amazon Chime webhooks for instant team notifications on releases.",
     },
     {
         title: "Wordle React Native",
@@ -92,10 +89,11 @@ const ProjectsSection = () => {
                             whileInView={{opacity: 1, y: 0}}
                             transition={{duration: 0.6, delay: index * 0.1}}
                             viewport={{once: true}}
+                            whileHover={{y: -8, transition: {duration: 0.3}}}
                             className="group"
                         >
                             <div
-                                className="bg-secondary/50 backdrop-blur-lg border border-primary/10 rounded-xl overflow-hidden h-full flex flex-col hover:border-primary/30 transition-all duration-300 shadow-lg">
+                                className="bg-secondary/50 backdrop-blur-lg border border-primary/10 rounded-xl overflow-hidden h-full flex flex-col hover:border-primary/30 hover:shadow-2xl transition-all duration-300 shadow-lg">
                                 <div className="aspect-video relative overflow-hidden bg-background/50">
                                     {project.featured && (
                                         <div className="absolute top-3 right-3 z-10">
@@ -104,9 +102,9 @@ const ProjectsSection = () => {
                                             </Badge>
                                         </div>
                                     )}
-                                    <Image src={project.image} alt={project.title} layout="fill" objectFit="cover"/>
+                                    <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="group-hover:scale-105 transition-transform duration-500"/>
                                     <div
-                                        className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center opacity-0">
+                                        className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:opacity-90 transition-opacity duration-500 flex items-center justify-center opacity-0">
                                         <div className="flex gap-4">
                                             {project.liveUrl && (
                                                 <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -129,14 +127,7 @@ const ProjectsSection = () => {
                                 </div>
                                 <div className="p-6 flex-1 flex flex-col">
                                     <h3 className="text-xl font-semibold mb-2 text-primary">{project.title}</h3>
-                                    <p className="text-sm text-secondary-foreground mb-4">{project.description}</p>
-
-                                    {project.techHighlight && (
-                                        <div className="mb-4 p-3 bg-primary/10 border-l-4 border-primary rounded-r">
-                                            <p className="text-xs font-semibold text-primary mb-1">💡 Tech Highlight</p>
-                                            <p className="text-xs text-secondary-foreground">{project.techHighlight}</p>
-                                        </div>
-                                    )}
+                                    <p className="text-sm text-secondary-foreground mb-4 flex-1">{project.description}</p>
 
                                     <div className="flex flex-wrap gap-2 mt-auto">
                                         {project.technologies.map((tech) => (
