@@ -54,7 +54,7 @@ const AboutSection = () => {
     I&apos;m a software developer who likes solving annoying problems with code. Currently at Amazon Hamburg, where I built a browser extension that automated a tedious 15-minute workflow down to a single click for our operations team.
 </p>
 <p className="text-lg mb-4 text-secondary-foreground">
-    I work across the full stack—React/TypeScript on the frontend, Spring Boot and Node.js on the backend. My bachelor thesis was an AI pitch evaluator that helps startups get better feedback on their presentations.
+    I work across the full stack, React/TypeScript on the frontend, Spring Boot and Node.js on the backend. My bachelor thesis was an AI pitch evaluator that helps startups get better feedback on their presentations.
 </p>
 <p className="text-lg mb-6 text-secondary-foreground">
     I&apos;m comfortable jumping between building user interfaces, debugging backend issues, and figuring out why the deployment pipeline broke (again). If there&apos;s a repetitive task that&apos;s wasting people&apos;s time, I&apos;ll probably try to automate it.

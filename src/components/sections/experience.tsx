@@ -28,9 +28,9 @@ const timelineData: TimelineItem[] = [
         location: "Hamburg, Germany",
         period: "November 2024 - Present",
        description: [
-    "Built browser extension that automates delivery partner communication—reduced 15-minute manual process to one-click operation (93% time savings), now used daily by operations team",
+    "Built browser extension that automates delivery partner communication, reduced 15-minute manual process to one-click operation (93% time savings), now used daily by operations team",
     "Created custom Grafana dashboards with Elasticsearch queries to surface metrics that existing monitoring tools don't show, enabling proactive issue detection",
-    "Set up full CI/CD pipeline with GitHub Actions, automated Mozilla signing, and Amazon Chime webhooks—reduced deployment time from manual process to automated 5-minute releases",
+    "Set up full CI/CD pipeline with GitHub Actions, automated Mozilla signing, and Amazon Chime webhooks, reduced deployment time from manual process to automated 5-minute releases",
     "Monitor delivery operations data across Hamburg network to catch and address issues before they escalate, improving operational efficiency"
 ],
         skills: ["GitHub Actions", "CI/CD", "Amazon Quicksight", "Grafana", "Data Analysis", "Risk Management"],

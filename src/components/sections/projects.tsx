@@ -31,7 +31,7 @@ const projectsData: Project[] = [
     {
         title: "DSP Management Extension",
         subtitle: "Production Tool at Amazon",
-        description: "Browser extension that saves our operations team about 15 minutes per notification cycle. Used to be: copy table from portal, process in Excel, manually message each delivery partner. Now: one click. Set up the full CI/CD pipeline with GitHub Actions.",
+        description: "Browser extension that saves our operations team about 15 minutes per notification cycle. Automates the workflow of copying tables from portal, processing in Excel, and messaging each delivery partner. Now it's just one click. Set up the full CI/CD pipeline with GitHub Actions.",
         technologies: ["WebExtensions API", "JavaScript", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
         githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
         image: "/projects/dsp.png",
@@ -48,7 +48,7 @@ const projectsData: Project[] = [
     {
         title: "OpenHub Tourism Data Analyzer",
         subtitle: "Multithreaded Data Processing Pipeline",
-        description: "Java application that pulls and processes 10,000+ tourism records from an API. Hit a memory issue where the app would crash on large datasets—traced it to the HTTP library. Switched libraries and optimized JVM memory allocation to handle the full dataset without errors.",
+        description: "Java application that pulls and processes 10,000+ tourism records from an API. Hit a memory issue where the app would crash on large datasets, traced it to the HTTP library. Switched libraries and optimized JVM memory allocation to handle the full dataset without errors.",
         technologies: ["Java", "Maven", "Multithreading", "REST API", "Gson", "Jackson", "Log4j", "JUnit"],
         githubUrl: "https://github.com/Maxxy21/Programming-Project-OpenHub",
         image: "/projects/openhub.png",
