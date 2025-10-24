@@ -1,8 +1,9 @@
 "use client"
 
-
 import { motion } from "framer-motion"
-import {BarChart, Code, Database, Monitor, Router, Server, Smartphone, Brain, TestTube} from "lucide-react"
+import {BarChart, Code, Database, Monitor, Router, Server, Smartphone, Brain, TestTube, X} from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { useSkillFilter } from "@/contexts/SkillFilterContext"
 
 const skills = [
     {
@@ -29,6 +30,19 @@ const skills = [
 
 
 export const SkillsSection = () => {
+    const { selectedSkill, setSelectedSkill } = useSkillFilter()
+
+    const handleSkillClick = (skill: string) => {
+        setSelectedSkill(selectedSkill === skill ? null : skill)
+        // Scroll to projects section
+        if (selectedSkill !== skill) {
+            const projectsSection = document.getElementById('projects')
+            if (projectsSection) {
+                projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+            }
+        }
+    }
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -77,12 +91,17 @@ export const SkillsSection = () => {
 
                             <div className="flex flex-wrap gap-1.5">
                                 {skillCategory.items.map((skill) => (
-                                    <span
+                                    <button
                                         key={skill}
-                                        className="text-sm px-3 py-1 rounded-full bg-background/50 text-secondary-foreground"
+                                        onClick={() => handleSkillClick(skill)}
+                                        className={`text-sm px-3 py-1 rounded-full transition-all duration-300 cursor-pointer hover:scale-105 ${
+                                            selectedSkill === skill
+                                                ? 'bg-primary text-primary-foreground font-semibold shadow-lg'
+                                                : 'bg-background/50 text-secondary-foreground hover:bg-primary/20 hover:text-primary'
+                                        }`}
                                     >
                                         {skill}
-                                    </span>
+                                    </button>
                                 ))}
                             </div>
                         </motion.div>

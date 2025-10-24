@@ -1,7 +1,7 @@
 "use client"
 
-import {motion} from "framer-motion"
-import {ExternalLink} from "lucide-react"
+import {motion, AnimatePresence} from "framer-motion"
+import {ExternalLink, X} from "lucide-react"
 import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
 import {Skeleton} from "@/components/ui/skeleton"
@@ -9,6 +9,7 @@ import Link from "next/link"
 import gitHub from "../../assets/github-mark-white.svg"
 import Image from "next/image"
 import {useState} from "react"
+import {useSkillFilter} from "@/contexts/SkillFilterContext"
 
 interface Project {
     title: string;
@@ -72,9 +73,28 @@ const projectsData: Project[] = [
 
 const ProjectsSection = () => {
     const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({})
+    const { selectedSkill, setSelectedSkill } = useSkillFilter()
 
     const handleImageLoad = (projectTitle: string) => {
         setLoadedImages(prev => ({...prev, [projectTitle]: true}))
+    }
+
+    // Filter projects based on selected skill
+    const filteredProjects = selectedSkill
+        ? projectsData.filter(project =>
+            project.technologies.some(tech =>
+                tech.toLowerCase().includes(selectedSkill.toLowerCase()) ||
+                selectedSkill.toLowerCase().includes(tech.toLowerCase())
+            )
+        )
+        : projectsData
+
+    const matchesFilter = (project: Project) => {
+        if (!selectedSkill) return true
+        return project.technologies.some(tech =>
+            tech.toLowerCase().includes(selectedSkill.toLowerCase()) ||
+            selectedSkill.toLowerCase().includes(tech.toLowerCase())
+        )
     }
 
     return (
@@ -89,6 +109,35 @@ const ProjectsSection = () => {
                 >
                     Featured Projects
                 </motion.h2>
+
+                {/* Skill Filter Banner */}
+                <AnimatePresence>
+                    {selectedSkill && (
+                        <motion.div
+                            initial={{ opacity: 0, y: -20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -20 }}
+                            className="mb-8 flex justify-center"
+                        >
+                            <div className="bg-primary/10 border-2 border-primary/30 rounded-lg px-6 py-3 flex items-center gap-3">
+                                <span className="text-sm font-medium">
+                                    Showing projects using: <span className="text-primary font-bold">{selectedSkill}</span>
+                                </span>
+                                <span className="text-muted-foreground text-sm">
+                                    ({filteredProjects.length} {filteredProjects.length === 1 ? 'project' : 'projects'})
+                                </span>
+                                <button
+                                    onClick={() => setSelectedSkill(null)}
+                                    className="ml-2 hover:bg-primary/20 rounded-full p-1 transition-colors"
+                                    aria-label="Clear filter"
+                                >
+                                    <X className="w-4 h-4" />
+                                </button>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {projectsData.map((project, index) => (
                         <motion.div
@@ -98,10 +147,16 @@ const ProjectsSection = () => {
                             transition={{duration: 0.6, delay: index * 0.1}}
                             viewport={{once: true}}
                             whileHover={{y: -8, transition: {duration: 0.3}}}
-                            className="group"
+                            className={`group transition-opacity duration-300 ${
+                                !matchesFilter(project) ? 'opacity-30' : 'opacity-100'
+                            }`}
                         >
                             <div
-                                className="bg-secondary/50 backdrop-blur-lg border border-primary/10 rounded-xl overflow-hidden h-full flex flex-col hover:border-primary/30 hover:shadow-2xl transition-all duration-300 shadow-lg">
+                                className={`bg-secondary/50 backdrop-blur-lg border rounded-xl overflow-hidden h-full flex flex-col hover:shadow-2xl transition-all duration-300 shadow-lg ${
+                                    matchesFilter(project)
+                                        ? 'border-primary/10 hover:border-primary/30'
+                                        : 'border-muted/10'
+                                }`}>
                                 <div className="aspect-video relative overflow-hidden bg-background/50">
                                     {project.featured && (
                                         <div className="absolute top-3 right-3 z-10">
