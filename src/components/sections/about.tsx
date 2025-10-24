@@ -3,14 +3,18 @@
 import { motion } from "framer-motion"
 import { Download, Globe, GraduationCap, Code } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Skeleton } from "@/components/ui/skeleton"
 import Image from "next/image"
 import portrait from "../../assets/portrait.jpg"
 import Link from "next/link";
+import { useState } from "react"
 
 // Languages
 const languages = "English (Native) • German (B2) • Italian (C1)"
 
 const AboutSection = () => {
+    const [imageLoaded, setImageLoaded] = useState(false)
+
     return (
         <section id="about" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
@@ -34,7 +38,18 @@ const AboutSection = () => {
                             className="md:col-span-2 flex justify-center"
                         >
                             <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border-4 border-primary/20 shadow-lg w-full max-w-sm">
-                                <Image src={portrait} alt="Portrait" layout="fill" objectFit="cover" />
+                                {!imageLoaded && (
+                                    <Skeleton className="absolute inset-0 w-full h-full" />
+                                )}
+                                <Image
+                                    src={portrait}
+                                    alt="Portrait"
+                                    layout="fill"
+                                    objectFit="cover"
+                                    onLoadingComplete={() => setImageLoaded(true)}
+                                    className={imageLoaded ? "opacity-100" : "opacity-0"}
+                                    style={{ transition: "opacity 0.3s ease-in-out" }}
+                                />
                             </div>
                         </motion.div>
 

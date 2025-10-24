@@ -2,10 +2,12 @@
 
 import {useState, useRef} from "react"
 import {motion} from "framer-motion"
-import {Send, Mail, MapPin, Phone, Clock, CheckCircle, AlertCircle} from "lucide-react"
+import {Send, Mail, MapPin, Phone, Clock} from "lucide-react"
 import {Button} from "@/components/ui/button"
+import {RippleButton} from "@/components/ui/ripple-button"
 import {Input} from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
+import {Toast} from "@/components/ui/toast"
 import emailjs from '@emailjs/browser'
 
 const ContactSection = () => {
@@ -17,9 +19,9 @@ const ContactSection = () => {
         message: ""
     })
     const [isSubmitting, setIsSubmitting] = useState(false)
-    const [formStatus, setFormStatus] = useState({
-        submitted: false,
-        success: false,
+    const [toast, setToast] = useState<{show: boolean; type: "success" | "error"; message: string}>({
+        show: false,
+        type: "success",
         message: ""
     })
 
@@ -32,9 +34,9 @@ const ContactSection = () => {
         e.preventDefault()
 
         if (!formState.name || !formState.email || !formState.message) {
-            setFormStatus({
-                submitted: true,
-                success: false,
+            setToast({
+                show: true,
+                type: "error",
                 message: "Please fill out all required fields"
             })
             return
@@ -56,9 +58,9 @@ const ContactSection = () => {
 
             await emailjs.send(serviceID, templateID, templateParams, userID)
 
-            setFormStatus({
-                submitted: true,
-                success: true,
+            setToast({
+                show: true,
+                type: "success",
                 message: "Message sent successfully! I'll get back to you soon."
             })
 
@@ -72,9 +74,9 @@ const ContactSection = () => {
 
         } catch (error) {
             console.error("Failed to send email:", error)
-            setFormStatus({
-                submitted: true,
-                success: false,
+            setToast({
+                show: true,
+                type: "error",
                 message: "Failed to send message. Please try again or contact me directly via email."
             })
         } finally {
@@ -82,16 +84,15 @@ const ContactSection = () => {
         }
     }
 
-    const resetForm = () => {
-        setFormStatus({
-            submitted: false,
-            success: false,
-            message: ""
-        })
-    }
-
     return (
         <section id="contact" className="py-16 md:py-20 animated-bg">
+            {toast.show && (
+                <Toast
+                    message={toast.message}
+                    type={toast.type}
+                    onClose={() => setToast({...toast, show: false})}
+                />
+            )}
             <div className="container mx-auto px-4">
                 <motion.h2
     initial={{opacity: 0, y: 20}}
@@ -161,29 +162,9 @@ const ContactSection = () => {
                         viewport={{once: true}}
                         className="lg:col-span-3 bg-secondary/50 backdrop-blur-lg p-8 rounded-2xl shadow-lg"
                     >
-                        {formStatus.submitted && formStatus.success ? (
-                            <div className="flex flex-col items-center justify-center space-y-4 py-10">
-                                <div
-                                    className="h-16 w-16 rounded-full bg-green-100 dark:bg-green-900/20 flex items-center justify-center">
-                                    <CheckCircle className="h-10 w-10 text-green-600 dark:text-green-400"/>
-                                </div>
-                                <h3 className="text-xl font-semibold text-center">{formStatus.message}</h3>
-                                <Button onClick={resetForm} variant="outline" className="mt-4">
-                                    Send Another Message
-                                </Button>
-                            </div>
-                        ) : (
-                            <>
-                                <h3 className="text-2xl font-semibold mb-6 text-primary">Send a Message</h3>
+                        <h3 className="text-2xl font-semibold mb-6 text-primary">Send a Message</h3>
 
-                                {formStatus.submitted && !formStatus.success && (
-                                    <div className="mb-6 p-4 rounded-lg bg-destructive/10 flex items-start">
-                                        <AlertCircle className="h-5 w-5 text-destructive mr-2 mt-0.5"/>
-                                        <p className="text-destructive">{formStatus.message}</p>
-                                    </div>
-                                )}
-
-                                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                        <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div className="space-y-2">
                                             <label htmlFor="name" className="text-sm text-muted-foreground">Your Name
@@ -244,27 +225,25 @@ const ContactSection = () => {
                                         />
                                     </div>
 
-                                    <Button
-                                        type="submit"
-                                        className="w-full md:w-auto"
-                                        disabled={isSubmitting}
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <div
-                                                    className="h-4 w-4 mr-2 border-2 border-t-transparent border-white rounded-full animate-spin"/>
-                                                Sending...
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Send className="w-4 h-4 mr-2"/>
-                                                Send Message
-                                            </>
-                                        )}
-                                    </Button>
-                                </form>
-                            </>
-                        )}
+                            <RippleButton
+                                type="submit"
+                                className="w-full md:w-auto"
+                                disabled={isSubmitting}
+                            >
+                                {isSubmitting ? (
+                                    <>
+                                        <div
+                                            className="h-4 w-4 mr-2 border-2 border-t-transparent border-white rounded-full animate-spin"/>
+                                        Sending...
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send className="w-4 h-4 mr-2"/>
+                                        Send Message
+                                    </>
+                                )}
+                            </RippleButton>
+                        </form>
                     </motion.div>
                 </div>
             </div>
