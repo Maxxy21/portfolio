@@ -4,9 +4,11 @@ import {motion} from "framer-motion"
 import {ExternalLink} from "lucide-react"
 import {Badge} from "@/components/ui/badge"
 import {Button} from "@/components/ui/button"
+import {Skeleton} from "@/components/ui/skeleton"
 import Link from "next/link"
 import gitHub from "../../assets/github-mark-white.svg"
 import Image from "next/image"
+import {useState} from "react"
 
 interface Project {
     title: string;
@@ -69,6 +71,12 @@ const projectsData: Project[] = [
 ]
 
 const ProjectsSection = () => {
+    const [loadedImages, setLoadedImages] = useState<Record<string, boolean>>({})
+
+    const handleImageLoad = (projectTitle: string) => {
+        setLoadedImages(prev => ({...prev, [projectTitle]: true}))
+    }
+
     return (
         <section id="projects" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
@@ -102,7 +110,18 @@ const ProjectsSection = () => {
                                             </Badge>
                                         </div>
                                     )}
-                                    <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="group-hover:scale-105 transition-transform duration-500"/>
+                                    {!loadedImages[project.title] && (
+                                        <Skeleton className="absolute inset-0 w-full h-full" />
+                                    )}
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        className={`group-hover:scale-105 transition-transform duration-500 ${loadedImages[project.title] ? 'opacity-100' : 'opacity-0'}`}
+                                        style={{ transition: "opacity 0.3s ease-in-out, transform 0.5s ease-in-out" }}
+                                        onLoadingComplete={() => handleImageLoad(project.title)}
+                                    />
                                     <div
                                         className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:opacity-90 transition-opacity duration-500 flex items-center justify-center opacity-0">
                                         <div className="flex gap-4">

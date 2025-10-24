@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { ArrowDown, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { RippleButton } from "@/components/ui/ripple-button"
 import Link from "next/link"
 import Image from 'next/image'
 
@@ -36,15 +37,15 @@ const HeroSection = () => {
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     <Link href={"#projects"}>
-                        <Button variant="default">
+                        <RippleButton variant="default">
                             See What I&apos;ve Built
-                        </Button>
+                        </RippleButton>
                     </Link>
 
                     <Link href={"#contact"}>
-                        <Button variant="outline">
+                        <RippleButton variant="outline">
                             Let&apos;s Talk
-                        </Button>
+                        </RippleButton>
                     </Link>
                 </div>
 
