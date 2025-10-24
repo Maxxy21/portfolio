@@ -7,16 +7,12 @@ import Image from "next/image"
 import portrait from "../../assets/portrait.jpg"
 import Link from "next/link";
 
-// Language proficiency data
-const languages = [
-    { language: "English", level: "Native", proficiency: 100 },
-    { language: "German", level: "B2", proficiency: 75 },
-    { language: "Italian", level: "C1", proficiency: 90 }
-]
+// Languages
+const languages = "English (Native) • German (B2) • Italian (C1)"
 
 const AboutSection = () => {
     return (
-        <section id="about" className="py-20 animated-bg">
+        <section id="about" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
@@ -37,7 +33,7 @@ const AboutSection = () => {
                             viewport={{ once: true }}
                             className="md:col-span-2 flex justify-center"
                         >
-                            <div className="aspect-square relative rounded-full overflow-hidden border-4 border-primary/20 shadow-lg w-64 h-64 lg:w-80 lg:h-80">
+                            <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border-4 border-primary/20 shadow-lg w-full max-w-sm">
                                 <Image src={portrait} alt="Portrait" layout="fill" objectFit="cover" />
                             </div>
                         </motion.div>
@@ -54,7 +50,7 @@ const AboutSection = () => {
     I&apos;m a software developer who likes solving annoying problems with code. Currently at Amazon Hamburg, where I built a browser extension that automated a tedious 15-minute workflow down to a single click for our operations team.
 </p>
 <p className="text-lg mb-4 text-secondary-foreground">
-    I work across the full stack—React/TypeScript on the frontend, Spring Boot and Node.js on the backend. My bachelor thesis was an AI pitch evaluator that helps startups get better feedback on their presentations.
+    I work across the full stack, React/TypeScript on the frontend, Spring Boot and Node.js on the backend. My bachelor thesis was an AI pitch evaluator that helps startups get better feedback on their presentations.
 </p>
 <p className="text-lg mb-6 text-secondary-foreground">
     I&apos;m comfortable jumping between building user interfaces, debugging backend issues, and figuring out why the deployment pipeline broke (again). If there&apos;s a repetitive task that&apos;s wasting people&apos;s time, I&apos;ll probably try to automate it.
@@ -66,29 +62,9 @@ const AboutSection = () => {
                                         <Globe className="mr-2 h-5 w-5" />
                                         Languages
                                     </h3>
-                                    <div className="space-y-3">
-                                        {languages.map((lang) => (
-                                            <div key={lang.language}>
-                                                <div className="flex justify-between items-center mb-1">
-                                                    <span className="text-secondary-foreground">
-                                                        {lang.language}
-                                                        <span className="ml-2 text-sm text-muted-foreground">
-                                                            {lang.level}
-                                                        </span>
-                                                    </span>
-                                                </div>
-                                                <div className="h-2 w-full bg-background/50 rounded-full overflow-hidden">
-                                                    <motion.div
-                                                        initial={{ width: 0 }}
-                                                        whileInView={{ width: `${lang.proficiency}%` }}
-                                                        transition={{ duration: 1, delay: 0.5 }}
-                                                        viewport={{ once: true }}
-                                                        className="h-full bg-primary rounded-full"
-                                                    />
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
+                                    <p className="text-secondary-foreground">
+                                        {languages}
+                                    </p>
                                 </div>
 
                                 <div className="flex flex-wrap gap-3 justify-start">

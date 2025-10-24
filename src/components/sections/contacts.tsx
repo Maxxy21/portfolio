@@ -91,7 +91,7 @@ const ContactSection = () => {
     }
 
     return (
-        <section id="contact" className="py-20 animated-bg">
+        <section id="contact" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
                 <motion.h2
     initial={{opacity: 0, y: 20}}

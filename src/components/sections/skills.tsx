@@ -6,45 +6,25 @@ import {BarChart, Code, Database, Monitor, Router, Server, Smartphone, Brain, Te
 
 const skills = [
     {
-        category: "Programming Languages",
+        category: "Languages & Frameworks",
         icon: <Code className="w-10 h-10 text-primary" />,
-        items: ["Java", "Python", "JavaScript", "TypeScript", "C++"]
+        items: ["Java", "TypeScript", "Python", "React.js", "Next.js", "Spring Boot", "Node.js"]
     },
-    {
-        category: "Frontend Development",
-        icon: <Monitor className="w-10 h-10 text-primary" />,
-        items: ["React.js", "Next.js 15", "React Native", "Expo", "HTML5", "CSS3", "Tailwind CSS"]
-    },
-    {
-        category: "Backend & Frameworks",
-        icon: <Server className="w-10 h-10 text-primary" />,
-        items: ["Spring Boot", "Node.js", "RESTful APIs", "Microservices", "Convex", "WebExtensions API"]
-    },
-    // {
-    //     category: "AI & Machine Learning",
-    //     icon: <Brain className="w-10 h-10 text-primary" />,
-    //     items: ["OpenAI GPT-4", "Claude", "Gemini", "AI Integration", "Prompt Engineering"]
-    // },
     {
         category: "DevOps & Cloud",
         icon: <Router className="w-10 h-10 text-primary" />,
-        items: ["Docker", "GitHub Actions", "CI/CD", "Terraform", "Kubernetes", "AWS (EC2, S3, Lambda)", "Azure", "Webhooks"]
+        items: ["Docker", "GitHub Actions", "CI/CD", "AWS", "Kubernetes", "Terraform"]
     },
     {
-        category: "Databases & Storage",
-        icon: <Database className="w-10 h-10 text-primary" />,
-        items: ["PostgreSQL", "MySQL", "Convex Database", "Prisma"]
+        category: "Data & Monitoring",
+        icon: <BarChart className="w-10 h-10 text-primary" />,
+        items: ["Grafana", "Elasticsearch", "PostgreSQL", "Quicksight", "Excel"]
     },
-    // {
-    //     category: "Testing & Quality",
-    //     icon: <TestTube className="w-10 h-10 text-primary" />,
-    //     items: ["Jest", "Automated Testing", "Error Boundaries", "Code Quality Tools"]
-    // },
     {
-    category: "Monitoring & Analytics",
-    icon: <BarChart className="w-10 h-10 text-primary" />,
-    items: ["Excel (VBA, Macros)", "Grafana", "Amazon Quicksight", "Elasticsearch", "Tableau", "Power BI"]
-}
+        category: "Testing & Tools",
+        icon: <TestTube className="w-10 h-10 text-primary" />,
+        items: ["Cypress.io", "Jest", "JUnit", "Git", "REST APIs", "WebExtensions"]
+    }
 ]
 
 
@@ -65,7 +45,7 @@ export const SkillsSection = () => {
     }
 
     return (
-        <section id="skills" className="py-20 animated-bg">
+        <section id="skills" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}

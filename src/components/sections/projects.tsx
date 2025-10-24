@@ -16,25 +16,28 @@ interface Project {
     liveUrl?: string | null;
     githubUrl: string;
     image: string;
+    featured?: boolean;
 }
 
 const projectsData: Project[] = [
     {
         title: "Pista - AI Startup Pitch Evaluator",
         subtitle: "Bachelor Thesis Project",
-       description: "AI tool that listens to startup pitches and gives feedback on what's working and what's not. Record your pitch, and it scores you on problem-solution fit, business model, pitch quality, and team.",
+       description: "Startups struggle to get objective feedback on their pitches before investor meetings. Built an AI-powered platform where founders record their pitch and get instant, structured feedback on problem-solution fit, business model, team presentation, and overall pitch quality. Uses GPT-4 for evaluation with real-time data sync via Convex.",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Convex", "OpenAI", "Clerk"],
         liveUrl: "https://pista-app.vercel.app",
         githubUrl: "https://github.com/Maxxy21/startup-pitches",
         image: "/projects/pista1.png",
+        featured: true,
     },
     {
         title: "DSP Management Extension",
         subtitle: "Production Tool at Amazon",
-        description: "Browser extension that saves our operations team about 15 minutes per notification cycle. Used to be: copy table from portal, process in Excel, manually message each delivery partner. Now: one click. Set up the full CI/CD pipeline with GitHub Actions.",
+        description: "Operations teams were manually copying delivery partner data from internal portals, processing it in Excel, then messaging each partner individually, taking 15 minutes per cycle. Built a browser extension that automates the entire workflow with one click. Now used daily by the Hamburg operations team.",
         technologies: ["WebExtensions API", "JavaScript", "GitHub Actions", "CI/CD", "Webhooks", "Amazon Chime"],
         githubUrl: "https://github.com/Maxxy21/dsp-extension-hosting",
         image: "/projects/dsp.png",
+        featured: true,
     },
     {
         title: "Wordle React Native",
@@ -48,7 +51,7 @@ const projectsData: Project[] = [
     {
         title: "OpenHub Tourism Data Analyzer",
         subtitle: "Multithreaded Data Processing Pipeline",
-        description: "Java application that pulls and processes 10,000+ tourism records from an API. Hit a memory issue where the app would crash on large datasets—traced it to the HTTP library. Switched libraries and optimized JVM memory allocation to handle the full dataset without errors.",
+        description: "Java application that pulls and processes 10,000+ tourism records from an API. Hit a memory issue where the app would crash on large datasets, traced it to the HTTP library. Switched libraries and optimized JVM memory allocation to handle the full dataset without errors.",
         technologies: ["Java", "Maven", "Multithreading", "REST API", "Gson", "Jackson", "Log4j", "JUnit"],
         githubUrl: "https://github.com/Maxxy21/Programming-Project-OpenHub",
         image: "/projects/openhub.png",
@@ -67,7 +70,7 @@ const projectsData: Project[] = [
 
 const ProjectsSection = () => {
     return (
-        <section id="projects" className="py-20 animated-bg">
+        <section id="projects" className="py-16 md:py-20 animated-bg">
             <div className="container mx-auto px-4">
                 <motion.h2
                     initial={{opacity: 0, y: 20}}
@@ -86,14 +89,22 @@ const ProjectsSection = () => {
                             whileInView={{opacity: 1, y: 0}}
                             transition={{duration: 0.6, delay: index * 0.1}}
                             viewport={{once: true}}
+                            whileHover={{y: -8, transition: {duration: 0.3}}}
                             className="group"
                         >
                             <div
-                                className="bg-secondary/50 backdrop-blur-lg border border-primary/10 rounded-xl overflow-hidden h-full flex flex-col hover:border-primary/30 transition-all duration-300 shadow-lg">
+                                className="bg-secondary/50 backdrop-blur-lg border border-primary/10 rounded-xl overflow-hidden h-full flex flex-col hover:border-primary/30 hover:shadow-2xl transition-all duration-300 shadow-lg">
                                 <div className="aspect-video relative overflow-hidden bg-background/50">
-                                    <Image src={project.image} alt={project.title} layout="fill" objectFit="cover"/>
+                                    {project.featured && (
+                                        <div className="absolute top-3 right-3 z-10">
+                                            <Badge className="bg-primary text-primary-foreground font-semibold">
+                                                Featured
+                                            </Badge>
+                                        </div>
+                                    )}
+                                    <Image src={project.image} alt={project.title} layout="fill" objectFit="cover" className="group-hover:scale-105 transition-transform duration-500"/>
                                     <div
-                                        className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:opacity-80 transition-opacity duration-300 flex items-center justify-center opacity-0">
+                                        className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 group-hover:opacity-90 transition-opacity duration-500 flex items-center justify-center opacity-0">
                                         <div className="flex gap-4">
                                             {project.liveUrl && (
                                                 <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
@@ -117,6 +128,7 @@ const ProjectsSection = () => {
                                 <div className="p-6 flex-1 flex flex-col">
                                     <h3 className="text-xl font-semibold mb-2 text-primary">{project.title}</h3>
                                     <p className="text-sm text-secondary-foreground mb-4 flex-1">{project.description}</p>
+
                                     <div className="flex flex-wrap gap-2 mt-auto">
                                         {project.technologies.map((tech) => (
                                             <Badge key={tech} variant="outline"

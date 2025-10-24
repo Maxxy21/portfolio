@@ -3,8 +3,9 @@
 import {useState, useEffect} from 'react'
 import Link from 'next/link'
 import {motion} from 'framer-motion'
-import {Menu, X} from 'lucide-react'
+import {Menu, X, Moon, Sun} from 'lucide-react'
 import {Button} from '@/components/ui/button'
+import {useTheme} from 'next-themes'
 
 interface NavItem {
     label: string
@@ -38,6 +39,8 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [mounted, setMounted] = useState(false)
+    const [activeSection, setActiveSection] = useState('')
+    const {theme, setTheme} = useTheme()
 
     // After mounting, we can safely show the UI that depends on theme
     useEffect(() => {
@@ -51,6 +54,22 @@ const Navbar = () => {
                 setIsScrolled(true)
             } else {
                 setIsScrolled(false)
+            }
+
+            // Determine active section
+            const sections = ['about', 'experience', 'projects', 'skills', 'contact']
+            const scrollPosition = window.scrollY + 100
+
+            for (const section of sections) {
+                const element = document.getElementById(section)
+                if (element) {
+                    const offsetTop = element.offsetTop
+                    const offsetBottom = offsetTop + element.offsetHeight
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+                        setActiveSection(`#${section}`)
+                        break
+                    }
+                }
             }
         }
 
@@ -89,7 +108,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="text-2xl font-bold gradient-text">
+                    <Link href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-2xl font-bold gradient-text cursor-pointer">
                         Maxwell
                     </Link>
 
@@ -99,18 +118,45 @@ const Navbar = () => {
                             <Link
                                 key={item.label}
                                 href={item.page}
-                                className="text-sm text-foreground hover:text-primary transition-colors duration-300"
+                                className={`text-sm transition-colors duration-300 ${
+                                    activeSection === item.page
+                                        ? 'text-primary font-semibold border-b-2 border-primary'
+                                        : 'text-foreground hover:text-primary'
+                                }`}
                             >
                                 {item.label}
                             </Link>
                         ))}
 
                         {/* Theme Toggle */}
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            aria-label="Toggle theme"
+                        >
+                            {theme === 'dark' ? (
+                                <Sun className="h-5 w-5" />
+                            ) : (
+                                <Moon className="h-5 w-5" />
+                            )}
+                        </Button>
                     </nav>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center gap-2">
-
+                        <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            aria-label="Toggle theme"
+                        >
+                            {theme === 'dark' ? (
+                                <Sun className="h-5 w-5" />
+                            ) : (
+                                <Moon className="h-5 w-5" />
+                            )}
+                        </Button>
                         <Button
                             variant="ghost"
                             size="icon"
