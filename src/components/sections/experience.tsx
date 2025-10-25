@@ -145,7 +145,7 @@ const ExperienceSection = () => {
                                     {item.icon}
                                 </motion.div>
 
-                                <div className="ml-4 md:ml-8">
+                                <div className="ml-8 md:ml-8">
                                     {/* Type badge */}
                                     <motion.div
                                         initial={{opacity: 0, y: -10}}
